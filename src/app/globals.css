@@ -8,7 +8,7 @@
 
   --color-ink: #0f1f1a;            /* near-black green for primary text */
   --color-ink-soft: #2c4138;       /* secondary text */
-  --color-muted: #6e7670;          /* tertiary/captions */
+  --color-muted: #5b6360;          /* tertiary/captions — WCAG AA on ivory + cream */
   --color-line: #e6dfd0;           /* hairline borders */
   --color-line-strong: #c8bda6;
 
@@ -19,7 +19,7 @@
 
   --color-gold: #c29a4b;           /* soft brushed gold accent */
   --color-gold-soft: #d8b675;
-  --color-gold-deep: #936f2c;
+  --color-gold-deep: #6f4f15;      /* darker — WCAG AA on cream / white for eyebrows */
 
   --color-cream: #ede2cd;          /* warm soft band — stronger than v1 for clearer separation */
 

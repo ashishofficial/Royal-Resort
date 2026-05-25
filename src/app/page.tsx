@@ -163,7 +163,11 @@ export default function HomePage() {
       {/* STATS BAR */}
       <section className="bg-[var(--color-surface)] border-b border-[var(--color-line)]">
         <Container className="py-8">
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 divide-x divide-[var(--color-line)] text-center">
+          <div
+            role="list"
+            aria-label="Royal Resort at a glance"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 divide-x divide-[var(--color-line)] text-center"
+          >
             {([
               { to: 500, suffix: "+", prefix: "", isMoney: false, label: "Guest capacity" },
               { to: 200, suffix: "+", prefix: "", isMoney: false, label: "Weddings hosted" },
@@ -171,8 +175,8 @@ export default function HomePage() {
               { to: 2.5, suffix: "L", prefix: "₹", isMoney: true, label: "All-in package" },
             ] as Array<{ to: number; suffix: string; prefix: string; isMoney: boolean; label: string }>).map((s, i) => (
               <Reveal key={s.label} delay={i * 90}>
-                <div className="px-4">
-                  <dt className="font-display text-3xl sm:text-4xl text-[var(--color-brand)] leading-none">
+                <div role="listitem" className="px-4">
+                  <div className="font-display text-3xl sm:text-4xl text-[var(--color-brand)] leading-none">
                     {s.isMoney ? (
                       <span>
                         {s.prefix}
@@ -182,14 +186,14 @@ export default function HomePage() {
                     ) : (
                       <CountUp to={s.to} suffix={s.suffix} prefix={s.prefix} />
                     )}
-                  </dt>
-                  <dd className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-muted)] mt-3 font-medium">
+                  </div>
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-muted)] mt-3 font-medium">
                     {s.label}
-                  </dd>
+                  </div>
                 </div>
               </Reveal>
             ))}
-          </dl>
+          </div>
         </Container>
       </section>
 
