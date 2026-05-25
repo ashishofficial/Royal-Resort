@@ -14,11 +14,11 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="hidden lg:flex fixed bottom-6 right-6 z-30 h-14 w-14 items-center justify-center rounded-full bg-[#1f8a4f] text-white shadow-[0_10px_30px_-8px_rgba(31,138,79,0.55)] hover:scale-110 hover:bg-[#176b3d] transition-all duration-300"
+      className="hidden lg:flex fixed bottom-6 right-6 z-30 h-14 w-14 items-center justify-center rounded-full bg-[#0c6131] text-white shadow-[0_10px_30px_-8px_rgba(12,97,49,0.55)] hover:scale-110 hover:bg-[#084d27] transition-all duration-300"
     >
       <span
         aria-hidden="true"
-        className="absolute inset-0 rounded-full bg-[#1f8a4f]/40 motion-safe:animate-ping"
+        className="absolute inset-0 rounded-full bg-[#0c6131]/40 motion-safe:animate-ping"
         style={{ animationDuration: "2.5s" }}
       />
       <svg
