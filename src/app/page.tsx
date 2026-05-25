@@ -162,7 +162,7 @@ export default function HomePage() {
 
       {/* STATS BAR */}
       <section className="bg-[var(--color-surface)] border-b border-[var(--color-line)]">
-        <Container className="py-10 lg:py-12">
+        <Container className="py-8">
           <dl className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 divide-x divide-[var(--color-line)] text-center">
             {([
               { to: 500, suffix: "+", prefix: "", isMoney: false, label: "Guest capacity" },
@@ -513,7 +513,7 @@ export default function HomePage() {
       </Section>
 
       {/* TESTIMONIALS */}
-      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white py-20 sm:py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white py-8">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-30"

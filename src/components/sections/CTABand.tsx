@@ -30,7 +30,7 @@ export function CTABand({
           }}
         />
       )}
-      <Container className="relative py-20 lg:py-28">
+      <Container className="relative py-8">
         <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-end">
           <div>
             <h2
