@@ -110,29 +110,40 @@ export default function HomePage() {
       <JsonLd data={faqSchema(homeFaqs)} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a0808] via-[#2d0a0a] to-[var(--color-ink)] text-white">
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 25% 30%, rgba(176,138,60,0.45), transparent 45%), radial-gradient(circle at 75% 70%, rgba(139,0,0,0.55), transparent 50%)",
+              "radial-gradient(circle at 20% 25%, rgba(47,106,85,0.55), transparent 55%), radial-gradient(circle at 80% 75%, rgba(216,182,117,0.18), transparent 55%)",
           }}
         />
-        <Container className="relative py-20 lg:py-28">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(45deg, transparent 49%, var(--color-gold) 49%, var(--color-gold) 51%, transparent 51%)",
+            backgroundSize: "30px 30px",
+          }}
+        />
+        <Container className="relative pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-14 lg:gap-20 items-center">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)] mb-6">
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold-soft)]" />
-                Soraon · Prayagraj
-              </p>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-white">
-                {SITE.shortName} — Premier Wedding &amp; Banquet Resort in Prayagraj
+              <div className="flex items-center gap-3 mb-7">
+                <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
+                <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
+                  Soraon · Prayagraj
+                </p>
+              </div>
+              <h1 className="font-display text-[44px] sm:text-6xl lg:text-7xl xl:text-[88px] leading-[0.98] text-white">
+                Prayagraj&rsquo;s most loved <em className="text-[var(--color-gold-soft)] italic">wedding</em> &amp; banquet resort.
               </h1>
-              <p className="mt-6 text-lg sm:text-xl text-white/85 leading-relaxed max-w-xl">
-                A peaceful, fully air-conditioned wedding resort in Soraon with a 500-guest banquet hall, decorated mandap, in-house catering, deluxe AC rooms, and an open lawn — all on one campus from <span className="font-semibold text-white">₹2.5 lakh</span>.
+              <p className="mt-8 text-lg sm:text-xl text-white/75 leading-relaxed max-w-xl">
+                A peaceful, air-conditioned resort in Soraon with a 500-guest banquet hall, decorated mandap, in-house catering, deluxe AC rooms, and an open lawn — all on one campus from <span className="text-white font-medium">₹2.5 lakh</span>.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-3">
                 <Button href="/contact" variant="gold" size="lg">
                   Check Availability
                 </Button>
@@ -144,36 +155,36 @@ export default function HomePage() {
                   Call {CONTACT.phonePrimaryDisplay}
                 </Button>
               </div>
-              <div className="mt-8 flex items-center gap-3 text-sm text-white/70">
-                <StarRating className="text-[var(--color-gold-soft)]" size={18} />
-                <span>
-                  {RATING.value} rating from {RATING.count}+ happy families
+              <div className="mt-10 flex items-center gap-3 text-sm text-white/60">
+                <StarRating className="text-[var(--color-gold-soft)]" size={16} />
+                <span className="font-medium">
+                  {RATING.value} · {RATING.count}+ happy families
                 </span>
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative lg:pl-8">
               <PhotoFrame
                 label="Royal Banquet Hall — Decorated for Reception"
                 aspect="3/4"
                 imageKey="banquet"
                 priority
-                className="shadow-2xl"
+                className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
               />
-              <div className="hidden sm:block absolute -bottom-6 -left-6 w-44 rotate-[-6deg]">
+              <div className="hidden sm:block absolute -bottom-8 -left-8 w-44">
                 <PhotoFrame
                   label="Decorated Mandap"
                   aspect="1/1"
                   imageKey="mandap"
-                  className="shadow-xl border-4 border-white/20"
+                  className="shadow-2xl ring-1 ring-white/15"
                 />
               </div>
-              <div className="hidden sm:block absolute -top-6 -right-6 w-40 rotate-[6deg]">
+              <div className="hidden sm:block absolute -top-6 -right-6 w-36">
                 <PhotoFrame
                   label="Lawn at Dusk"
                   aspect="1/1"
                   imageKey="lawn"
-                  className="shadow-xl border-4 border-white/20"
+                  className="shadow-2xl ring-1 ring-white/15"
                 />
               </div>
             </div>
@@ -182,20 +193,20 @@ export default function HomePage() {
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-[var(--color-cream)] border-y border-[var(--color-line)]">
-        <Container className="py-8">
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <section className="bg-[var(--color-surface)] border-b border-[var(--color-line)]">
+        <Container className="py-10 lg:py-12">
+          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 divide-x divide-[var(--color-line)] text-center">
             {[
               { value: "500+", label: "Guest capacity" },
               { value: "200+", label: "Weddings hosted" },
               { value: "2", label: "AC halls + lawn" },
               { value: "₹2.5L", label: "All-in package" },
             ].map((s) => (
-              <div key={s.label}>
-                <dt className="font-display text-3xl sm:text-4xl text-[var(--color-brand)]">
+              <div key={s.label} className="px-4">
+                <dt className="font-display text-4xl sm:text-5xl text-[var(--color-brand)] leading-none">
                   {s.value}
                 </dt>
-                <dd className="text-xs sm:text-sm uppercase tracking-[0.12em] text-[var(--color-muted)] mt-1">
+                <dd className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-muted)] mt-3 font-medium">
                   {s.label}
                 </dd>
               </div>
@@ -208,6 +219,7 @@ export default function HomePage() {
       <Section
         eyebrow="About the Resort"
         title="Prayagraj's most loved wedding resort, just a short drive from the city"
+        index="I — The Resort"
       >
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div className="space-y-5 text-[var(--color-ink-soft)] leading-relaxed text-[17px]">
@@ -234,10 +246,11 @@ export default function HomePage() {
 
       {/* VENUE SHOWCASE */}
       <Section
-        className="bg-white"
+        tone="surface"
         eyebrow="Spaces at Royal Resort"
         title="Pick the right space for your celebration"
         intro="Whether it is a 500-guest baraat or an intimate haldi for 80, we have a dedicated space for it — and you can combine spaces for multi-day weddings."
+        index="II — Our Spaces"
       >
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {[
@@ -289,7 +302,7 @@ export default function HomePage() {
           ].map((card) => (
             <article
               key={card.href}
-              className="group flex flex-col rounded-2xl border border-[var(--color-line)] bg-white overflow-hidden hover:shadow-xl transition-shadow"
+              className="group relative flex flex-col rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] overflow-hidden shadow-[0_1px_0_rgba(15,31,26,0.03),0_8px_24px_-16px_rgba(15,31,26,0.1)] hover:shadow-[0_2px_0_rgba(15,31,26,0.04),0_28px_50px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-1 transition-all duration-300 ease-out"
             >
               <PhotoFrame label={card.title} aspect="3/2" imageKey={card.imageKey} />
               <div className="p-6 sm:p-7 flex flex-col flex-1">
@@ -332,10 +345,11 @@ export default function HomePage() {
 
       {/* PACKAGE INCLUSIONS */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="What's Included"
         title="Everything in the ₹2.5L wedding package"
         intro="One transparent price. No surprises on the bill. Here is exactly what the Royal Banquet Hall wedding package covers for 500 guests."
+        index="III — The Package"
       >
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
@@ -351,12 +365,12 @@ export default function HomePage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-white rounded-xl p-6 border border-[var(--color-line)] hover:border-[var(--color-brand)] transition-colors"
+              className="group bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-cream)] text-[var(--color-brand)]">
-                <item.Icon size={24} strokeWidth={1.6} aria-hidden="true" />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] text-[var(--color-brand)] group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)] group-hover:border-[var(--color-brand)] transition-colors duration-300">
+                <item.Icon size={22} strokeWidth={1.6} aria-hidden="true" />
               </div>
-              <h3 className="font-display text-lg text-[var(--color-ink)] mb-2">
+              <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
@@ -375,6 +389,7 @@ export default function HomePage() {
         eyebrow="Gallery"
         title="A look around Royal Resort"
         intro="Real photos from real weddings — full gallery available on request."
+        index="IV — In Pictures"
       >
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <PhotoFrame label="Decorated Banquet Hall" aspect="4/3" imageKey="banquet" />
@@ -392,14 +407,25 @@ export default function HomePage() {
       </Section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-[var(--color-ink)] text-white py-16 sm:py-20 lg:py-24">
-        <Container>
-          <div className="max-w-3xl mb-12">
-            <p className="text-[var(--color-gold-soft)] text-sm font-semibold uppercase tracking-[0.18em] mb-3">
-              Why Families Choose Us
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
-              Real reviews from real weddings
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white py-20 sm:py-24 lg:py-32">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 15% 20%, rgba(216,182,117,0.25), transparent 50%), radial-gradient(circle at 85% 80%, rgba(47,106,85,0.5), transparent 50%)",
+          }}
+        />
+        <Container className="relative">
+          <div className="max-w-3xl mb-14">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
+              <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.22em]">
+                Why Families Choose Us
+              </p>
+            </div>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05]">
+              Real reviews from <em className="italic text-[var(--color-gold-soft)]">real</em> weddings
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -425,9 +451,9 @@ export default function HomePage() {
             ].map((t) => (
               <figure
                 key={t.name}
-                className="rounded-2xl bg-white/[0.04] border border-white/10 p-6 backdrop-blur"
+                className="rounded-2xl bg-white/[0.04] border border-white/10 p-7 backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300"
               >
-                <StarRating className="text-[var(--color-gold-soft)] mb-3" size={18} />
+                <StarRating className="text-[var(--color-gold-soft)] mb-4" size={16} />
                 <blockquote className="text-white/90 leading-relaxed text-[15px]">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
@@ -449,11 +475,13 @@ export default function HomePage() {
 
       {/* PRICING SNAPSHOT */}
       <Section
+        tone="surface"
         eyebrow="Transparent Pricing"
         title="No hidden costs. No per-plate surprises."
         intro="Compared to city banquet halls in Prayagraj at ₹999–₹1500 per plate, our wedding package works out to roughly ₹500 per plate — with the venue, decoration, mandap, stage, rooms, and waiters all included."
+        index="VI — Pricing"
       >
-        <div className="overflow-x-auto rounded-2xl border border-[var(--color-line)] bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_10px_30px_-18px_rgba(15,31,26,0.18)]">
           <table className="w-full text-left">
             <thead className="bg-[var(--color-cream)] text-[var(--color-ink)]">
               <tr>
@@ -504,15 +532,15 @@ export default function HomePage() {
           </table>
         </div>
         <div className="mt-8 grid sm:grid-cols-3 gap-4 text-sm">
-          <div className="bg-white rounded-xl p-5 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <div className="font-semibold text-[var(--color-ink)] mb-1">Booking Advance</div>
             <div className="text-[var(--color-ink-soft)]">₹1,50,000 to confirm date. Balance 15 days before event.</div>
           </div>
-          <div className="bg-white rounded-xl p-5 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <div className="font-semibold text-[var(--color-ink)] mb-1">Payment Modes</div>
             <div className="text-[var(--color-ink-soft)]">UPI, bank transfer, card, and cash all accepted.</div>
           </div>
-          <div className="bg-white rounded-xl p-5 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-surface)] rounded-xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <div className="font-semibold text-[var(--color-ink)] mb-1">Custom Packages</div>
             <div className="text-[var(--color-ink-soft)]">Multi-day weddings, combinations, larger guest counts — just ask.</div>
           </div>
@@ -521,14 +549,15 @@ export default function HomePage() {
 
       {/* LOCATION */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="Find Us"
         title="A peaceful drive from the heart of Prayagraj"
         intro="Far enough from city traffic for calm pheras and clean photography — close enough that no guest is inconvenienced."
+        index="VII — Visit"
       >
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-10 items-start">
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-6 border border-[var(--color-line)]">
+            <div className="bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_8px_24px_-18px_rgba(15,31,26,0.16)]">
               <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Address</h3>
               <address className="not-italic text-[var(--color-ink-soft)] leading-relaxed">
                 {LOCATION.streetAddress}<br />
@@ -544,7 +573,7 @@ export default function HomePage() {
                 Open in Google Maps →
               </a>
             </div>
-            <div className="bg-white rounded-2xl p-6 border border-[var(--color-line)]">
+            <div className="bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_8px_24px_-18px_rgba(15,31,26,0.16)]">
               <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Driving Distance</h3>
               <ul className="space-y-2 text-sm text-[var(--color-ink-soft)]">
                 <li className="flex justify-between gap-4"><span>Prayagraj Junction</span> <span className="text-[var(--color-muted)]">~40 min</span></li>
@@ -571,9 +600,11 @@ export default function HomePage() {
 
       {/* FAQ */}
       <Section
+        tone="surface"
         eyebrow="Common Questions"
         title="Everything you wanted to ask"
         intro="If you have a question that is not answered here, WhatsApp us — we usually reply within an hour."
+        index="VIII — Questions"
       >
         <FAQ items={homeFaqs} />
       </Section>

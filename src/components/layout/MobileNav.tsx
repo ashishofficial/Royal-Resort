@@ -23,39 +23,39 @@ export function MobileNav() {
     <>
       <button
         type="button"
-        aria-label="Open menu"
+        aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-[var(--color-ink)] hover:bg-[var(--color-cream)] transition-colors"
       >
-        {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+        {open ? <X size={20} strokeWidth={1.8} aria-hidden="true" /> : <Menu size={20} strokeWidth={1.8} aria-hidden="true" />}
       </button>
 
       {open && (
         <div
-          className="lg:hidden fixed inset-0 top-16 sm:top-20 z-50 bg-white animate-in fade-in"
+          className="lg:hidden fixed inset-0 top-16 sm:top-20 z-50 bg-[var(--color-bg)]"
           onClick={() => setOpen(false)}
         >
-          <nav className="flex flex-col px-6 py-8 gap-1">
+          <nav className="flex flex-col px-6 py-10 gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="px-2 py-4 text-lg border-b border-[var(--color-line)] text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
+                className="px-1 py-5 font-display text-2xl border-b border-[var(--color-line)] text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <a
               href={`tel:${CONTACT.phonePrimary}`}
-              className="mt-6 px-6 py-4 rounded-full bg-[var(--color-brand)] text-white text-center font-medium"
+              className="mt-8 px-6 py-4 rounded-full bg-[var(--color-brand)] text-[var(--color-bg)] text-center font-medium"
             >
               Call {CONTACT.phonePrimaryDisplay}
             </a>
             <a
               href={`https://wa.me/${CONTACT.whatsapp}`}
-              className="mt-3 px-6 py-4 rounded-full bg-[#25D366] text-white text-center font-medium"
+              className="mt-3 px-6 py-4 rounded-full border border-[var(--color-brand)] text-[var(--color-brand)] text-center font-medium"
             >
               WhatsApp Us
             </a>

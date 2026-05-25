@@ -90,26 +90,37 @@ export default function BanquetHallPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a0808] via-[#2d0a0a] to-[var(--color-ink)] text-white">
-        <Container className="relative py-16 lg:py-24">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25% 30%, rgba(47,106,85,0.5), transparent 55%), radial-gradient(circle at 80% 80%, rgba(216,182,117,0.15), transparent 55%)",
+          }}
+        />
+        <Container className="relative py-20 lg:py-28">
+          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)] mb-6">
-                Royal Banquet Hall
-              </p>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-                AC Banquet Hall in Prayagraj for 500 Guests
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
+                <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
+                  Royal Banquet Hall
+                </p>
+              </div>
+              <h1 className="font-display text-[40px] sm:text-5xl lg:text-[68px] leading-[1.02]">
+                AC Banquet Hall in Prayagraj <em className="italic text-[var(--color-gold-soft)]">for 500</em> guests
               </h1>
-              <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-xl">
+              <p className="mt-7 text-lg text-white/75 leading-relaxed max-w-xl">
                 Prayagraj&rsquo;s most complete wedding banquet hall — central air-conditioning, decorated mandap, designer stage, two AC rooms, full catering space, and 20 trained waiters. One package, one transparent price.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-5xl text-white">₹2.5L</span>
-                <span className="text-white/70">
+                <span className="font-display text-6xl text-[var(--color-gold-soft)]">₹2.5L</span>
+                <span className="text-white/60 text-sm">
                   for 500 guests · all-inclusive
                 </span>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-3">
                 <Button href="/contact" variant="gold" size="lg">
                   Check Date Availability
                 </Button>
@@ -122,13 +133,13 @@ export default function BanquetHallPage() {
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative lg:pl-8">
               <PhotoFrame
                 label="Royal Banquet Hall — Wedding Setup"
                 aspect="4/3"
                 imageKey="banquet"
                 priority
-                className="shadow-2xl"
+                className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
               />
             </div>
           </div>
@@ -139,6 +150,7 @@ export default function BanquetHallPage() {
       <Section
         eyebrow="Overview"
         title="Built for weddings of every scale, not retrofitted from a hotel ballroom"
+        index="I — The Hall"
       >
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div className="space-y-5 text-[var(--color-ink-soft)] leading-relaxed text-[17px]">
@@ -164,10 +176,11 @@ export default function BanquetHallPage() {
 
       {/* PACKAGE INCLUSIONS */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="Inside the ₹2.5L Package"
         title="What you get, line by line"
         intro="No fine print. No surprise add-ons. This is the full inclusion list for the Royal Banquet Hall wedding package."
+        index="II — Inclusions"
       >
         <div className="grid md:grid-cols-2 gap-4">
           {[
@@ -184,16 +197,16 @@ export default function BanquetHallPage() {
           ].map(([title, body]) => (
             <div
               key={title}
-              className="bg-white rounded-xl p-5 border border-[var(--color-line)] flex gap-4"
+              className="group bg-[var(--color-surface)] rounded-2xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300 flex gap-4"
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] text-white">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] text-[var(--color-bg)] group-hover:bg-[var(--color-brand-dark)] transition-colors">
                 <Check size={18} strokeWidth={2.5} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-display text-lg text-[var(--color-ink)]">
+                <h3 className="font-display text-xl text-[var(--color-ink)]">
                   {title}
                 </h3>
-                <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed mt-1">
+                <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed mt-1.5">
                   {body}
                 </p>
               </div>
@@ -204,12 +217,14 @@ export default function BanquetHallPage() {
 
       {/* CATERING & FOOD ESSENTIALS */}
       <Section
+        tone="surface"
         eyebrow="Catering"
         title="In-house chef, or bring your own — either way, the kitchen is ready"
         intro="The venue includes everything a caterer needs. We also offer an in-house catering team with full North Indian, Mughlai, Chinese, South Indian, and live-counter menus."
+        index="III — Catering"
       >
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-6 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-bg)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">
               Kitchen Provided
             </h3>
@@ -221,7 +236,7 @@ export default function BanquetHallPage() {
               <li>· Drinking water and ice</li>
             </ul>
           </div>
-          <div className="bg-white rounded-2xl p-6 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-bg)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">
               Buffet & Live Counters
             </h3>
@@ -233,7 +248,7 @@ export default function BanquetHallPage() {
               <li>· Plates, glasses, cutlery for 500</li>
             </ul>
           </div>
-          <div className="bg-white rounded-2xl p-6 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-bg)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">
               Cuisines Available
             </h3>
@@ -250,9 +265,10 @@ export default function BanquetHallPage() {
 
       {/* HALL LAYOUT & SPECS */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="Hall Layout"
         title="Specifications at a glance"
+        index="IV — Specs"
       >
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
@@ -267,12 +283,12 @@ export default function BanquetHallPage() {
           ].map((spec) => (
             <div
               key={spec.label}
-              className="bg-white rounded-xl p-5 border border-[var(--color-line)] text-center"
+              className="bg-[var(--color-bg)] rounded-2xl p-6 border border-[var(--color-line)] text-center shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:border-[var(--color-line-strong)] transition-colors"
             >
-              <div className="text-xs uppercase tracking-[0.14em] text-[var(--color-muted)] mb-1.5">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-muted)] mb-2 font-medium">
                 {spec.label}
               </div>
-              <div className="font-display text-2xl text-[var(--color-ink)]">
+              <div className="font-display text-3xl text-[var(--color-ink)]">
                 {spec.value}
               </div>
             </div>
@@ -282,8 +298,10 @@ export default function BanquetHallPage() {
 
       {/* TERMS */}
       <Section
+        tone="surface"
         eyebrow="Booking Terms"
         title="Clear, fair terms — no fine print"
+        index="V — Terms"
       >
         <div className="grid md:grid-cols-2 gap-6">
           {[
@@ -296,9 +314,9 @@ export default function BanquetHallPage() {
           ].map(([title, body]) => (
             <div
               key={title}
-              className="rounded-2xl border border-[var(--color-line)] p-6 bg-white"
+              className="rounded-2xl border border-[var(--color-line)] p-7 bg-[var(--color-bg)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.18)] hover:border-[var(--color-line-strong)] transition-all duration-300"
             >
-              <h3 className="font-display text-lg text-[var(--color-ink)] mb-2">
+              <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
                 {title}
               </h3>
               <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
@@ -311,9 +329,10 @@ export default function BanquetHallPage() {
 
       {/* FAQ */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="Quick Answers"
         title="Banquet hall — most asked questions"
+        index="VI — Questions"
       >
         <FAQ items={faqs} />
       </Section>

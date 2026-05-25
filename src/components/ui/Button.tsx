@@ -11,29 +11,29 @@ type Variant =
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-gold-soft)] disabled:opacity-50 disabled:pointer-events-none";
+  "group inline-flex items-center justify-center gap-2 font-medium tracking-wide transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-[var(--color-bg)] disabled:opacity-50 disabled:pointer-events-none rounded-full";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-dark)] shadow-sm hover:shadow-md",
+    "bg-[var(--color-brand)] text-[var(--color-bg)] hover:bg-[var(--color-brand-dark)] shadow-[0_1px_2px_rgba(15,31,26,0.08)] hover:shadow-[0_8px_24px_-8px_rgba(31,74,58,0.4)]",
   secondary:
-    "bg-white border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-white",
-  ghost: "text-[var(--color-ink)] hover:bg-[var(--color-cream)]",
+    "bg-[var(--color-surface)] border border-[var(--color-line-strong)] text-[var(--color-ink)] hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]",
+  ghost:
+    "text-[var(--color-ink)] hover:bg-[var(--color-cream)]",
   gold:
-    "bg-[var(--color-gold)] text-[var(--color-ink)] hover:bg-[var(--color-gold-soft)] shadow-sm hover:shadow-md",
-  // For use on dark/brand backgrounds — transparent with white outline,
-  // inverts to white-on-brand on hover.
+    "bg-[var(--color-gold)] text-[var(--color-ink)] hover:bg-[var(--color-gold-soft)] shadow-[0_1px_2px_rgba(15,31,26,0.08)] hover:shadow-[0_8px_24px_-8px_rgba(194,154,75,0.5)]",
+  // For dark/brand backgrounds — transparent w/ subtle outline, inverts on hover.
   "outline-light":
-    "bg-transparent border border-white/80 text-white hover:bg-white hover:text-[var(--color-brand)] hover:border-white",
-  // Solid white button on dark backgrounds.
+    "bg-transparent border border-white/30 text-white hover:bg-white hover:text-[var(--color-brand)] hover:border-white backdrop-blur-sm",
+  // Solid white on dark backgrounds.
   white:
-    "bg-white text-[var(--color-brand)] hover:bg-[var(--color-cream)] shadow-sm",
+    "bg-[var(--color-bg)] text-[var(--color-brand)] hover:bg-white",
 };
 
 const sizes: Record<Size, string> = {
   sm: "h-9 px-4 text-sm",
-  md: "h-11 px-6 text-[15px]",
-  lg: "h-13 px-8 text-base py-3.5",
+  md: "h-11 px-5 text-[14px]",
+  lg: "h-12 px-7 text-[15px]",
 };
 
 type Props = {

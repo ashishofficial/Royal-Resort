@@ -64,16 +64,27 @@ export default function ContactPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-[#1a0808] via-[#2d0a0a] to-[var(--color-ink)] text-white">
-        <Container className="py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25% 30%, rgba(47,106,85,0.5), transparent 55%), radial-gradient(circle at 80% 80%, rgba(216,182,117,0.15), transparent 55%)",
+          }}
+        />
+        <Container className="relative py-20 lg:py-24">
           <div className="max-w-3xl">
-            <p className="text-[var(--color-gold-soft)] uppercase tracking-[0.18em] text-xs font-semibold mb-3">
-              We are here to help
-            </p>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-              Talk to the Royal Resort team
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
+              <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
+                We are here to help
+              </p>
+            </div>
+            <h1 className="font-display text-[40px] sm:text-5xl lg:text-[68px] leading-[1.02]">
+              Talk to the <em className="italic text-[var(--color-gold-soft)]">Royal Resort</em> team
             </h1>
-            <p className="mt-6 text-lg text-white/85 leading-relaxed">
+            <p className="mt-7 text-lg text-white/75 leading-relaxed">
               Call, WhatsApp, or send us an enquiry. We reply to almost every message within an hour during the day — usually with a quote, available dates, and an invitation to come walk the venue.
             </p>
           </div>
@@ -81,12 +92,12 @@ export default function ContactPage() {
       </section>
 
       {/* QUICK CONTACT BAR */}
-      <section className="bg-white border-b border-[var(--color-line)]">
-        <Container className="py-8">
+      <section className="bg-[var(--color-bg)] border-b border-[var(--color-line)]">
+        <Container className="py-12">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
               href={`tel:${CONTACT.phonePrimary}`}
-              className="flex items-start gap-4 p-5 rounded-xl border border-[var(--color-line)] hover:border-[var(--color-brand)] hover:shadow-md transition-all"
+              className="group flex items-start gap-4 p-6 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)] text-white">
                 <Phone size={20} strokeWidth={2} aria-hidden="true" />
@@ -126,7 +137,7 @@ export default function ContactPage() {
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="flex items-start gap-4 p-5 rounded-xl border border-[var(--color-line)] hover:border-[var(--color-brand)] hover:shadow-md transition-all"
+              className="group flex items-start gap-4 p-6 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--color-ink)] text-white">
                 <Mail size={20} strokeWidth={2} aria-hidden="true" />
@@ -149,16 +160,18 @@ export default function ContactPage() {
 
       {/* FORM + ADDRESS */}
       <Section
+        tone="surface"
         eyebrow="Send Enquiry"
         title="Tell us about your event"
+        index="I — Enquire"
       >
         <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14">
-          <div className="rounded-2xl border border-[var(--color-line)] bg-white p-6 sm:p-8">
+          <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-bg)] p-7 sm:p-9 shadow-[0_10px_30px_-18px_rgba(15,31,26,0.18)]">
             <ContactForm />
           </div>
           <div className="space-y-6">
-            <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-cream)] p-6">
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Visit Us</h3>
+            <div className="rounded-2xl border border-[var(--color-line-strong)]/40 bg-[var(--color-cream)] p-7">
+              <h3 className="font-display text-2xl text-[var(--color-ink)] mb-3">Visit Us</h3>
               <address className="not-italic text-[var(--color-ink-soft)] leading-relaxed">
                 <strong className="text-[var(--color-ink)] block">Royal Resort</strong>
                 {LOCATION.streetAddress}<br />
@@ -172,12 +185,12 @@ export default function ContactPage() {
                 href={LOCATION.googleMapsUrl}
                 variant="primary"
                 size="md"
-                className="mt-4"
+                className="mt-5"
               >
                 Get Directions
               </Button>
             </div>
-            <div className="rounded-2xl border border-[var(--color-line)] bg-white p-6">
+            <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-bg)] p-7">
               <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Hours</h3>
               <p className="text-[var(--color-ink-soft)] text-sm leading-relaxed">
                 Open all 7 days for venue tours and event bookings.<br />
@@ -191,22 +204,23 @@ export default function ContactPage() {
 
       {/* DIRECTIONS */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="How to Reach"
         title="Driving directions from key landmarks"
         intro="Soraon is on the Prayagraj-Lucknow side of the city. The drive is straightforward in any direction."
+        index="II — Directions"
       >
         <div className="grid md:grid-cols-2 gap-4">
           {landmarks.map((l) => (
             <div
               key={l.from}
-              className="bg-white rounded-xl p-5 border border-[var(--color-line)]"
+              className="bg-[var(--color-bg)] rounded-2xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_16px_30px_-18px_rgba(31,74,58,0.18)] hover:border-[var(--color-line-strong)] transition-all duration-300"
             >
               <h3 className="font-display text-lg text-[var(--color-ink)]">From {l.from}</h3>
-              <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed mt-1">
+              <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed mt-1.5">
                 {l.via}
               </p>
-              <p className="text-sm text-[var(--color-brand)] font-semibold mt-2">{l.time}</p>
+              <p className="text-sm text-[var(--color-brand)] font-semibold mt-3">{l.time}</p>
             </div>
           ))}
         </div>
@@ -214,10 +228,12 @@ export default function ContactPage() {
 
       {/* MAP */}
       <Section
+        tone="surface"
         eyebrow="On the Map"
         title="Find Royal Resort"
+        index="III — Map"
       >
-        <div className="rounded-2xl overflow-hidden border border-[var(--color-line)] aspect-[16/9]">
+        <div className="rounded-2xl overflow-hidden border border-[var(--color-line)] aspect-[16/9] shadow-[0_20px_40px_-22px_rgba(15,31,26,0.2)]">
           <iframe
             src={`https://maps.google.com/maps?q=${encodeURIComponent(LOCATION.googleMapsEmbedQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
             width="100%"

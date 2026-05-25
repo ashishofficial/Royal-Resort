@@ -101,24 +101,35 @@ export default function MiniHallPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#3a2a05] via-[#5a3f10] to-[var(--color-ink)] text-white">
-        <Container className="relative py-16 lg:py-24">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25% 30%, rgba(47,106,85,0.5), transparent 55%), radial-gradient(circle at 80% 80%, rgba(216,182,117,0.18), transparent 55%)",
+          }}
+        />
+        <Container className="relative py-20 lg:py-28">
+          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)] mb-6">
-                Royal Mini Hall
-              </p>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-                Haldi, Mehndi, Birthday &amp; Engagement Venue in Prayagraj
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
+                <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
+                  Royal Mini Hall
+                </p>
+              </div>
+              <h1 className="font-display text-[40px] sm:text-5xl lg:text-[64px] leading-[1.02]">
+                Haldi, mehndi, birthday &amp; engagement <em className="italic text-[var(--color-gold-soft)]">venue</em>
               </h1>
-              <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-xl">
+              <p className="mt-7 text-lg text-white/75 leading-relaxed max-w-xl">
                 An air-conditioned mini hall built for intimate functions of around 200 guests. Decorated stage, 2 AC rooms, 8 waiters — all in one package, on the same campus as our main banquet hall.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-5xl text-white">₹1L</span>
-                <span className="text-white/70">for 200 guests · all-inclusive</span>
+                <span className="font-display text-6xl text-[var(--color-gold-soft)]">₹1L</span>
+                <span className="text-white/60 text-sm">for 200 guests · all-inclusive</span>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-3">
                 <Button href="/contact" variant="gold" size="lg">
                   Reserve a Date
                 </Button>
@@ -131,13 +142,13 @@ export default function MiniHallPage() {
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative lg:pl-8">
               <PhotoFrame
                 label="Mini Hall — Haldi Setup"
                 aspect="4/3"
                 imageKey="miniHall"
                 priority
-                className="shadow-2xl"
+                className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
               />
             </div>
           </div>
@@ -149,6 +160,7 @@ export default function MiniHallPage() {
         eyebrow="Designed For"
         title="The intimate function that deserves its own space"
         intro="A 500-guest banquet hall is wrong for a 100-guest haldi. A community hall is wrong for an engagement. The Mini Hall was built for exactly the in-between functions every Indian family hosts every few years."
+        index="I — Use Cases"
       >
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {(
@@ -169,12 +181,12 @@ export default function MiniHallPage() {
           ).map((u) => (
             <div
               key={u.label}
-              className="bg-white rounded-xl p-4 border border-[var(--color-line)] text-center hover:border-[var(--color-brand)] transition-colors"
+              className="group bg-[var(--color-surface)] rounded-2xl p-5 border border-[var(--color-line)] text-center shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_16px_30px_-18px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <u.Icon
-                size={28}
+                size={26}
                 strokeWidth={1.6}
-                className="mx-auto mb-2 text-[var(--color-brand)]"
+                className="mx-auto mb-3 text-[var(--color-brand)] group-hover:scale-110 transition-transform duration-300"
                 aria-hidden="true"
               />
               <div className="text-sm font-medium text-[var(--color-ink)]">{u.label}</div>
@@ -185,9 +197,10 @@ export default function MiniHallPage() {
 
       {/* INCLUSIONS */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="What's Included"
         title="Everything in the ₹1L package"
+        index="II — Inclusions"
       >
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {(
@@ -202,12 +215,12 @@ export default function MiniHallPage() {
           ).map((item) => (
             <div
               key={item.title}
-              className="bg-white rounded-xl p-6 border border-[var(--color-line)]"
+              className="group bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[var(--color-brand)] border border-[var(--color-line)]">
-                <item.Icon size={24} strokeWidth={1.6} aria-hidden="true" />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] text-[var(--color-brand)] group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)] group-hover:border-[var(--color-brand)] transition-colors duration-300">
+                <item.Icon size={22} strokeWidth={1.6} aria-hidden="true" />
               </div>
-              <h3 className="font-display text-lg text-[var(--color-ink)] mb-2">
+              <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
@@ -223,10 +236,12 @@ export default function MiniHallPage() {
 
       {/* PAIRING */}
       <Section
+        tone="surface"
         eyebrow="Multi-Day Weddings"
         title="Pair the Mini Hall with the Banquet Hall for a complete wedding weekend"
+        index="III — Together"
       >
-        <div className="rounded-2xl bg-[var(--color-ink)] text-white overflow-hidden">
+        <div className="rounded-3xl bg-[var(--color-brand-deep)] text-white overflow-hidden shadow-[0_30px_60px_-30px_rgba(31,74,58,0.45)]">
           <div className="grid md:grid-cols-2">
             <div className="p-8 lg:p-10">
               <p className="text-[var(--color-gold-soft)] uppercase tracking-[0.18em] text-xs font-semibold mb-3">
@@ -258,9 +273,10 @@ export default function MiniHallPage() {
 
       {/* FAQ */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="Quick Answers"
         title="Mini hall — most asked questions"
+        index="IV — Questions"
       >
         <FAQ items={faqs} />
       </Section>

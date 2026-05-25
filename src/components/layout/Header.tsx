@@ -6,19 +6,21 @@ import { CONTACT, NAV_LINKS, SITE } from "@/lib/site";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[var(--color-line)]">
+    <header className="sticky top-0 z-40 bg-[var(--color-bg)]/85 backdrop-blur-xl border-b border-[var(--color-line)]">
       <Container as="div" className="flex h-16 sm:h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <span
             aria-hidden="true"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-brand)] text-white font-display text-lg group-hover:scale-105 transition-transform"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-brand)] text-[var(--color-brand)] font-display text-lg transition-all group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)]"
           >
             R
           </span>
-          <span className="font-display text-lg sm:text-xl leading-tight">
-            <span className="block text-[var(--color-ink)]">{SITE.shortName}</span>
-            <span className="block text-[10px] sm:text-xs uppercase tracking-[0.18em] text-[var(--color-muted)] -mt-0.5">
-              Prayagraj
+          <span className="leading-tight">
+            <span className="font-display text-xl sm:text-[22px] text-[var(--color-ink)] block tracking-tight">
+              {SITE.shortName}
+            </span>
+            <span className="block text-[10px] uppercase tracking-[0.22em] text-[var(--color-muted)] -mt-0.5">
+              Soraon · Prayagraj
             </span>
           </span>
         </Link>
@@ -28,22 +30,22 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-2 text-[15px] text-[var(--color-ink-soft)] hover:text-[var(--color-brand)] transition-colors"
+              className="px-4 py-2 text-[14px] text-[var(--color-ink-soft)] hover:text-[var(--color-brand)] transition-colors duration-200"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-5">
           <a
             href={`tel:${CONTACT.phonePrimary}`}
-            className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
+            className="text-[14px] font-medium text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
           >
             {CONTACT.phonePrimaryDisplay}
           </a>
           <Button href="/contact" size="sm" variant="primary">
-            Book Now
+            Enquire
           </Button>
         </div>
 

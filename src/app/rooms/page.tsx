@@ -92,26 +92,37 @@ export default function RoomsPage() {
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0d0d18] via-[#1a1a2a] to-[var(--color-ink)] text-white">
-        <Container className="relative py-16 lg:py-24">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25% 30%, rgba(47,106,85,0.5), transparent 55%), radial-gradient(circle at 80% 80%, rgba(216,182,117,0.15), transparent 55%)",
+          }}
+        />
+        <Container className="relative py-20 lg:py-28">
+          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)] mb-6">
-                Deluxe Rooms
-              </p>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-                On-Campus AC Rooms for Wedding Guests &amp; Families
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
+                <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
+                  Deluxe Rooms
+                </p>
+              </div>
+              <h1 className="font-display text-[40px] sm:text-5xl lg:text-[64px] leading-[1.02]">
+                On-campus AC rooms for <em className="italic text-[var(--color-gold-soft)]">wedding guests</em> &amp; families
               </h1>
-              <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-xl">
+              <p className="mt-7 text-lg text-white/75 leading-relaxed max-w-xl">
                 Comfortable air-conditioned deluxe rooms with attached bathrooms on the Royal Resort campus — ideal for baraat parties, outstation family, and couples who would rather stay over than drive back to the city after a function.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-5xl text-white">
+                <span className="font-display text-6xl text-[var(--color-gold-soft)]">
                   ₹{PRICING.deluxeRoomNight.toLocaleString("en-IN")}
                 </span>
-                <span className="text-white/70">per night · double occupancy</span>
+                <span className="text-white/60 text-sm">per night · double occupancy</span>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-3">
                 <Button href="/contact" variant="gold" size="lg">
                   Check Room Availability
                 </Button>
@@ -124,13 +135,13 @@ export default function RoomsPage() {
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative lg:pl-8">
               <PhotoFrame
                 label="Deluxe AC Room"
                 aspect="4/3"
                 imageKey="room"
                 priority
-                className="shadow-2xl"
+                className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
               />
             </div>
           </div>
@@ -141,6 +152,7 @@ export default function RoomsPage() {
       <Section
         eyebrow="Who Stays Here"
         title="Built around weddings — open to anyone who needs comfort away from the city"
+        index="I — The Rooms"
       >
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div className="space-y-5 text-[var(--color-ink-soft)] leading-relaxed text-[17px]">
@@ -166,9 +178,10 @@ export default function RoomsPage() {
 
       {/* AMENITIES */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="In Every Room"
         title="Standard amenities — across every deluxe room"
+        index="II — Amenities"
       >
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {(
@@ -189,12 +202,12 @@ export default function RoomsPage() {
           ).map((a) => (
             <div
               key={a.label}
-              className="bg-white rounded-xl p-4 border border-[var(--color-line)] text-center"
+              className="group bg-[var(--color-surface)] rounded-2xl p-5 border border-[var(--color-line)] text-center shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_16px_30px_-18px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <a.Icon
                 size={24}
                 strokeWidth={1.6}
-                className="mx-auto mb-2 text-[var(--color-brand)]"
+                className="mx-auto mb-3 text-[var(--color-brand)] group-hover:scale-110 transition-transform duration-300"
                 aria-hidden="true"
               />
               <div className="text-sm font-medium text-[var(--color-ink)]">{a.label}</div>
@@ -205,10 +218,12 @@ export default function RoomsPage() {
 
       {/* TARIFF */}
       <Section
+        tone="surface"
         eyebrow="Tariff"
         title="Simple, transparent room rates"
+        index="III — Tariff"
       >
-        <div className="overflow-x-auto rounded-2xl border border-[var(--color-line)] bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-[var(--color-line)] bg-[var(--color-bg)] shadow-[0_10px_30px_-18px_rgba(15,31,26,0.18)]">
           <table className="w-full text-left">
             <thead className="bg-[var(--color-cream)] text-[var(--color-ink)]">
               <tr>
@@ -259,15 +274,15 @@ export default function RoomsPage() {
           </table>
         </div>
         <div className="grid sm:grid-cols-3 gap-4 mt-8 text-sm">
-          <div className="bg-white rounded-xl p-5 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-bg)] rounded-2xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <div className="font-semibold text-[var(--color-ink)] mb-1">Check-in</div>
             <div className="text-[var(--color-ink-soft)]">From 12:00 noon</div>
           </div>
-          <div className="bg-white rounded-xl p-5 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-bg)] rounded-2xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <div className="font-semibold text-[var(--color-ink)] mb-1">Check-out</div>
             <div className="text-[var(--color-ink-soft)]">By 11:00 AM</div>
           </div>
-          <div className="bg-white rounded-xl p-5 border border-[var(--color-line)]">
+          <div className="bg-[var(--color-bg)] rounded-2xl p-6 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
             <div className="font-semibold text-[var(--color-ink)] mb-1">Wedding bookings</div>
             <div className="text-[var(--color-ink-soft)]">2 AC rooms included free in the ₹2.5L banquet package</div>
           </div>
@@ -276,9 +291,10 @@ export default function RoomsPage() {
 
       {/* FAQ */}
       <Section
-        className="bg-[var(--color-cream)]"
+        tone="cream"
         eyebrow="Quick Answers"
         title="Rooms — most asked questions"
+        index="IV — Questions"
       >
         <FAQ items={faqs} />
       </Section>

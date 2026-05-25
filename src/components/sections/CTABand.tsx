@@ -16,25 +16,35 @@ export function CTABand({
     <section
       className={
         isBrand
-          ? "bg-[var(--color-brand)] text-white"
+          ? "relative overflow-hidden bg-[var(--color-brand)] text-white"
           : "bg-[var(--color-cream)] text-[var(--color-ink)]"
       }
     >
-      <Container className="py-14 lg:py-20">
-        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
+      {isBrand && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 30%, rgba(216,182,117,0.4) 0, transparent 50%), radial-gradient(circle at 80% 70%, rgba(47,106,85,0.6) 0, transparent 50%)",
+          }}
+        />
+      )}
+      <Container className="relative py-20 lg:py-28">
+        <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-end">
           <div>
             <h2
-              className={`text-3xl sm:text-4xl lg:text-5xl leading-tight ${isBrand ? "text-white" : ""}`}
+              className={`font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] ${isBrand ? "text-white" : "text-[var(--color-ink)]"}`}
             >
               {title}
             </h2>
             <p
-              className={`mt-4 text-lg ${isBrand ? "text-white/85" : "text-[var(--color-ink-soft)]"}`}
+              className={`mt-6 text-lg leading-relaxed max-w-xl ${isBrand ? "text-white/80" : "text-[var(--color-ink-soft)]"}`}
             >
               {subtitle}
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 lg:justify-end">
+          <div className="flex flex-wrap gap-3 lg:justify-end lg:items-end">
             <Button
               href={`tel:${CONTACT.phonePrimary}`}
               variant={isBrand ? "gold" : "primary"}
