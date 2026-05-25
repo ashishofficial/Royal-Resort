@@ -5,36 +5,28 @@ import { useEffect, useState } from "react";
 import { Lightbox } from "./Lightbox";
 import { useGallery } from "./PhotoGallery";
 
-// Curated stock photos from Unsplash — all free for commercial use.
-// To swap any of these for a real wedding photo: replace the URL with your
-// own (Unsplash, Pexels, or your own CDN — domain must be whitelisted in
-// next.config.ts -> images.remotePatterns).
-const unsplash = (id: string) =>
-  `https://images.unsplash.com/${id}?w=1600&q=80&auto=format&fit=crop`;
-
-// Higher-resolution version for the lightbox (browser-rendered full size).
-const unsplashLarge = (id: string) =>
-  `https://images.unsplash.com/${id}?w=2400&q=85&auto=format&fit=max`;
-
-const IMAGE_IDS = {
-  banquet: "photo-1542665952-14513db15293",
-  mandap: "photo-1587271636175-90d58cdad458",
-  lawn: "photo-1768777277892-a7853afe5bd7",
-  miniHall: "photo-1770387688486-397ff1afdb2c",
-  stage: "photo-1523438885200-e635ba2c371e",
-  room: "photo-1611892440504-42a792e24d32",
-  bathroom: "photo-1664917555352-f3f66e57ccc2",
-  dressing: "photo-1643216583837-f6d664d48eac",
-  mehndi: "photo-1670774837214-21b88943a6bb",
-  aisle: "photo-1607861884586-c7cfaed16290",
-  gallery: "photo-1587271407850-8d438ca9fdf2",
+// Real Royal Resort photos served from /public/images/.
+// To swap any subject for a better photo: drop a new JPEG into /public/images/
+// with the same filename, or change the path here.
+// TODO: room/bathroom/dressing currently re-use venue exterior/event photos
+// because dedicated room photos were not provided. Replace once available.
+const IMAGES = {
+  banquet: "/images/banquet.jpeg",
+  mandap: "/images/mandap.jpeg",
+  lawn: "/images/lawn.jpeg",
+  miniHall: "/images/mini-hall.jpeg",
+  stage: "/images/stage.jpeg",
+  room: "/images/room.jpeg",
+  bathroom: "/images/bathroom.jpeg",
+  dressing: "/images/dressing.jpeg",
+  mehndi: "/images/mehndi.jpeg",
+  aisle: "/images/aisle.jpeg",
+  gallery: "/images/gallery.jpeg",
 } as const;
 
-export const DUMMY_IMAGES = Object.fromEntries(
-  Object.entries(IMAGE_IDS).map(([k, id]) => [k, unsplash(id)]),
-) as Record<keyof typeof IMAGE_IDS, string>;
+export const DUMMY_IMAGES = IMAGES;
 
-export type ImageKey = keyof typeof IMAGE_IDS;
+export type ImageKey = keyof typeof IMAGES;
 
 const RATIOS: Record<string, string> = {
   "4/3": "aspect-[4/3]",
@@ -61,19 +53,18 @@ export function PhotoFrame({
 }) {
   const gallery = useGallery();
   const [localOpen, setLocalOpen] = useState(false);
-  const src = unsplash(IMAGE_IDS[imageKey]);
-  const srcLarge = unsplashLarge(IMAGE_IDS[imageKey]);
+  const src = IMAGES[imageKey];
 
   // Register with the parent PhotoGallery (if any) so the shared lightbox
   // knows about this image. Standalone PhotoFrames skip registration and
   // manage their own single-image modal below.
   useEffect(() => {
-    if (gallery) gallery.register({ src: srcLarge, alt: label });
-  }, [gallery, srcLarge, label]);
+    if (gallery) gallery.register({ src, alt: label });
+  }, [gallery, src, label]);
 
   const handleClick = () => {
     if (gallery) {
-      gallery.open(srcLarge);
+      gallery.open(src);
     } else {
       setLocalOpen(true);
     }
@@ -122,7 +113,7 @@ export function PhotoFrame({
       {/* Standalone fallback when no PhotoGallery wraps this PhotoFrame */}
       {!gallery && (
         <Lightbox
-          items={[{ src: srcLarge, alt: label }]}
+          items={[{ src, alt: label }]}
           index={localOpen ? 0 : null}
           onClose={() => setLocalOpen(false)}
           onIndexChange={() => {}}
