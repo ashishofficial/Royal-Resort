@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { PhotoGallery } from "@/components/ui/PhotoGallery";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
@@ -166,7 +167,7 @@ export default function RoomsPage() {
               Each room is fully air-conditioned with central AC, has an attached private bathroom with hot water, comfortable bedding, in-room tea/coffee setup, and a dedicated dressing zone — important when guests are getting ready for evening functions.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <PhotoGallery className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <PhotoFrame label="Deluxe Room — Bedside" aspect="3/4" imageKey="room" />
               <PhotoFrame label="Bridal Dressing Area" aspect="1/1" imageKey="dressing" />
@@ -175,7 +176,7 @@ export default function RoomsPage() {
               <PhotoFrame label="Attached Bathroom" aspect="1/1" imageKey="bathroom" />
               <PhotoFrame label="On-campus View" aspect="3/4" imageKey="lawn" />
             </div>
-          </div>
+          </PhotoGallery>
         </div>
       </Section>
 

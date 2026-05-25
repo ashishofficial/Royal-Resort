@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { PhotoGallery } from "@/components/ui/PhotoGallery";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
 import { StickyAvailability } from "@/components/sections/StickyAvailability";
@@ -164,7 +165,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-none relative lg:pl-8">
+            <PhotoGallery className="order-1 lg:order-none relative lg:pl-8">
               {/* Mobile-first photo: shows above text on small screens, becomes
                   the lead photo in a collage on lg+ */}
               <PhotoFrame
@@ -190,7 +191,7 @@ export default function HomePage() {
                   className="shadow-2xl ring-1 ring-white/15"
                 />
               </div>
-            </div>
+            </PhotoGallery>
           </div>
         </Container>
       </section>
@@ -237,7 +238,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <PhotoGallery className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <PhotoFrame label="Banquet Hall — Reception Setup" aspect="3/4" imageKey="banquet" />
               <PhotoFrame label="Open Lawn — Evening" aspect="1/1" imageKey="lawn" />
@@ -246,7 +247,7 @@ export default function HomePage() {
               <PhotoFrame label="Mandap with Flower Decoration" aspect="1/1" imageKey="mandap" />
               <PhotoFrame label="Designer Stage" aspect="3/4" imageKey="stage" />
             </div>
-          </div>
+          </PhotoGallery>
         </div>
       </Section>
 
@@ -463,14 +464,14 @@ export default function HomePage() {
         intro="Real photos from real weddings — full gallery available on request."
         index="V — In Pictures"
       >
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+        <PhotoGallery className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <PhotoFrame label="Decorated Banquet Hall" aspect="4/3" imageKey="banquet" />
           <PhotoFrame label="Mandap Close-up" aspect="4/3" imageKey="mandap" />
           <PhotoFrame label="Lawn at Twilight" aspect="4/3" imageKey="lawn" />
           <PhotoFrame label="Bride Entry Aisle" aspect="4/3" imageKey="aisle" />
           <PhotoFrame label="Stage with Family" aspect="4/3" imageKey="stage" />
           <PhotoFrame label="Mehndi Function Setup" aspect="4/3" imageKey="mehndi" />
-        </div>
+        </PhotoGallery>
         <div className="mt-10 text-center">
           <Button href="/contact" variant="secondary" size="md">
             Request Full Gallery on WhatsApp
@@ -488,7 +489,7 @@ export default function HomePage() {
         index="VI — A Real Wedding"
       >
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-start">
-          <div className="space-y-4">
+          <PhotoGallery className="space-y-4">
             <PhotoFrame
               label="Ananya & Rohan at the mandap"
               aspect="4/3"
@@ -500,7 +501,7 @@ export default function HomePage() {
               <PhotoFrame label="Bride entry" aspect="1/1" imageKey="aisle" />
               <PhotoFrame label="Reception stage" aspect="1/1" imageKey="stage" />
             </div>
-          </div>
+          </PhotoGallery>
 
           <figure className="lg:sticky lg:top-28 space-y-6">
             <span className="block font-display text-5xl text-[var(--color-gold-deep)] leading-none" aria-hidden="true">&ldquo;</span>

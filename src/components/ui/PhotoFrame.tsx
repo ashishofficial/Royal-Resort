@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Lightbox } from "./Lightbox";
+import { useGallery } from "./PhotoGallery";
 
 // Curated stock photos from Unsplash — all free for commercial use.
 // To swap any of these for a real wedding photo: replace the URL with your
@@ -58,15 +59,31 @@ export function PhotoFrame({
   priority?: boolean;
   sizes?: string;
 }) {
-  const [open, setOpen] = useState(false);
+  const gallery = useGallery();
+  const [localOpen, setLocalOpen] = useState(false);
   const src = unsplash(IMAGE_IDS[imageKey]);
   const srcLarge = unsplashLarge(IMAGE_IDS[imageKey]);
+
+  // Register with the parent PhotoGallery (if any) so the shared lightbox
+  // knows about this image. Standalone PhotoFrames skip registration and
+  // manage their own single-image modal below.
+  useEffect(() => {
+    if (gallery) gallery.register({ src: srcLarge, alt: label });
+  }, [gallery, srcLarge, label]);
+
+  const handleClick = () => {
+    if (gallery) {
+      gallery.open(srcLarge);
+    } else {
+      setLocalOpen(true);
+    }
+  };
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={handleClick}
         aria-label={`Open image: ${label}`}
         className={`group relative overflow-hidden rounded-2xl bg-[var(--color-brand-deep)] ${RATIOS[aspect]} ${className} cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] w-full block`}
       >
@@ -102,7 +119,15 @@ export function PhotoFrame({
         </span>
       </button>
 
-      <Lightbox src={srcLarge} alt={label} open={open} onClose={() => setOpen(false)} />
+      {/* Standalone fallback when no PhotoGallery wraps this PhotoFrame */}
+      {!gallery && (
+        <Lightbox
+          items={[{ src: srcLarge, alt: label }]}
+          index={localOpen ? 0 : null}
+          onClose={() => setLocalOpen(false)}
+          onIndexChange={() => {}}
+        />
+      )}
     </>
   );
 }

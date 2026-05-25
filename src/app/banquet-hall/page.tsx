@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { PhotoGallery } from "@/components/ui/PhotoGallery";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
@@ -164,7 +165,7 @@ export default function BanquetHallPage() {
               And because we are a resort campus — not a standalone hall — you also get a Mini Hall for haldi/mehndi, a lawn for outdoor functions, and on-site AC rooms for the bride, groom, and their immediate families. That is why families that come for a tour usually leave having booked the date.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <PhotoGallery className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <PhotoFrame label="Hall — Empty Layout" aspect="3/4" imageKey="banquet" />
               <PhotoFrame label="Adjacent Lawn" aspect="1/1" imageKey="lawn" />
@@ -173,7 +174,7 @@ export default function BanquetHallPage() {
               <PhotoFrame label="Mandap with Flowers" aspect="1/1" imageKey="mandap" />
               <PhotoFrame label="Decorated Stage Close-up" aspect="3/4" imageKey="stage" />
             </div>
-          </div>
+          </PhotoGallery>
         </div>
       </Section>
 
