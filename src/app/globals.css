@@ -24,7 +24,7 @@
   --color-cream: #ede2cd;          /* warm soft band — stronger than v1 for clearer separation */
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument-serif), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-risque), "Cormorant Garamond", Georgia, serif;
 }
 
 :root {

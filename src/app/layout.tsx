@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Risque } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTAs } from "@/components/layout/MobileCTAs";
@@ -17,12 +17,11 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const instrumentSerif = Instrument_Serif({
+const risque = Risque({
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
+  variable: "--font-risque",
   display: "swap",
   weight: "400",
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -113,7 +112,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-IN"
-      className={`${inter.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${inter.variable} ${risque.variable} h-full antialiased`}
     >
       <head>
         <JsonLd data={organizationSchema()} />
