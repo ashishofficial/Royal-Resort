@@ -141,7 +141,7 @@ export default function HomePage() {
                   Soraon · Prayagraj
                 </p>
               </div>
-              <h1 className="font-display text-[40px] sm:text-6xl lg:text-7xl xl:text-[88px] leading-[0.98] text-white">
+              <h1 className="font-display text-[30px] sm:text-4xl lg:text-5xl xl:text-[56px] leading-[1.05] text-white">
                 Prayagraj&rsquo;s most loved <em className="text-[var(--color-gold-soft)] italic">wedding</em> &amp; banquet resort.
               </h1>
               <p className="mt-7 text-base sm:text-xl text-white/75 leading-relaxed max-w-xl">
