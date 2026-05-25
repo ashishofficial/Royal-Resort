@@ -21,7 +21,6 @@ export function Section({
   id,
   align = "left",
   tone = "default",
-  index,
   animate = true,
 }: {
   children?: ReactNode;
@@ -33,7 +32,10 @@ export function Section({
   id?: string;
   align?: "left" | "center";
   tone?: Tone;
-  /** Optional chapter index displayed in a top corner, magazine style. */
+  /**
+   * Deprecated chapter marker (e.g. "I — The Resort"). Still accepted by
+   * existing call sites but no longer rendered. Drop in a future cleanup.
+   */
   index?: string;
   /** Fade in the header + content as the section enters the viewport. */
   animate?: boolean;
