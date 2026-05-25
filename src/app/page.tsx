@@ -234,15 +234,15 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
               <PhotoFrame label="Banquet Hall — Reception Setup" aspect="3/4" imageKey="banquet" />
-              <div className="grid gap-4">
-                <PhotoFrame label="Mandap with Flower Decoration" aspect="1/1" imageKey="mandap" />
-                <PhotoFrame label="Designer Stage" aspect="1/1" imageKey="stage" />
-              </div>
+              <PhotoFrame label="Open Lawn — Evening" aspect="1/1" imageKey="lawn" />
             </div>
-            <PhotoFrame label="Open Lawn — Evening" aspect="16/9" imageKey="lawn" />
+            <div className="space-y-4 lg:pt-12">
+              <PhotoFrame label="Mandap with Flower Decoration" aspect="1/1" imageKey="mandap" />
+              <PhotoFrame label="Designer Stage" aspect="3/4" imageKey="stage" />
+            </div>
           </div>
         </div>
       </Section>
