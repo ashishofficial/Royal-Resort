@@ -14,7 +14,7 @@ export type HeroSlide = { src: string; alt: string };
  */
 export function HeroCarousel({
   slides,
-  interval = 6000,
+  interval = 3500,
 }: {
   slides: HeroSlide[];
   interval?: number;
@@ -54,7 +54,7 @@ export function HeroCarousel({
         <div
           key={slide.src}
           aria-hidden={i !== index}
-          className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
+          className={`absolute inset-0 transition-opacity duration-[900ms] ease-out ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
         >
