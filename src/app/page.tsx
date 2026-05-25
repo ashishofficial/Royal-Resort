@@ -9,6 +9,7 @@ import { PhotoGallery } from "@/components/ui/PhotoGallery";
 import { Reveal } from "@/components/ui/Reveal";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import { StickyAvailability } from "@/components/sections/StickyAvailability";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
@@ -114,67 +115,46 @@ export default function HomePage() {
       <JsonLd data={faqSchema(homeFaqs)} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 25%, rgba(47,106,85,0.55), transparent 55%), radial-gradient(circle at 80% 75%, rgba(216,182,117,0.18), transparent 55%)",
-          }}
+      <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white h-[88vh] min-h-[600px] sm:min-h-[640px]">
+        <HeroCarousel
+          slides={[
+            { src: "/images/mini-hall.jpeg", alt: "Royal Resort — Mini Hall at dusk" },
+            { src: "/images/lawn.jpeg", alt: "Royal Resort — main banquet hall with adjoining lawn" },
+            { src: "/images/mandap.jpeg", alt: "Decorated mandap canopies at Royal Resort" },
+          ]}
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(45deg, transparent 49%, var(--color-gold) 49%, var(--color-gold) 51%, transparent 51%)",
-            backgroundSize: "30px 30px",
-          }}
-        />
-        <Container className="relative pt-14 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-32">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 sm:gap-14 lg:gap-20 items-center">
-            <div className="order-2 lg:order-none">
-              <div className="flex items-center gap-3 mb-6 sm:mb-7">
-                <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
-                <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
-                  Soraon · Prayagraj
-                </p>
-              </div>
-              <h1 className="font-display text-[28px] sm:text-4xl lg:text-5xl xl:text-[52px] leading-[1.08] text-white">
-                Prayagraj&rsquo;s most loved <em className="text-[var(--color-gold-soft)] italic">wedding</em> &amp; banquet resort.
-              </h1>
-              <p className="mt-7 text-base sm:text-xl text-white/75 leading-relaxed max-w-xl">
-                A peaceful, air-conditioned resort in Soraon with a 500-guest banquet hall, decorated mandap, in-house catering, deluxe AC rooms, and an open lawn — all on one campus from <span className="text-white font-medium">₹2.5 lakh</span>.
-              </p>
-              <div className="mt-8 sm:mt-10 flex flex-wrap gap-3">
-                <Button href="/contact" variant="gold" size="lg">
-                  Check Availability
-                </Button>
-                <Button
-                  href={`tel:${CONTACT.phonePrimary}`}
-                  variant="outline-light"
-                  size="lg"
-                >
-                  Call {CONTACT.phonePrimaryDisplay}
-                </Button>
-              </div>
-              <div className="mt-8 sm:mt-10 flex items-center gap-3 text-sm text-white/60">
-                <StarRating className="text-[var(--color-gold-soft)]" size={16} />
-                <span className="font-medium">
-                  {RATING.value} · {RATING.count}+ happy families
-                </span>
-              </div>
-            </div>
 
-            <div className="order-1 lg:order-none relative lg:pl-8">
-              <PhotoFrame
-                label="Royal Resort — Mini Hall at Dusk"
-                aspect="3/4"
-                imageKey="miniHall"
-                priority
-                className="!aspect-[4/3] sm:!aspect-[3/4] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
-              />
+        <Container className="relative z-10 h-full flex flex-col justify-center pt-16 pb-24 lg:pt-20 lg:pb-28">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-5 sm:mb-7">
+              <span className="h-px w-10 bg-[var(--color-gold-soft)]" aria-hidden="true" />
+              <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
+                Soraon · Prayagraj
+              </p>
+            </div>
+            <h1 className="font-display text-[28px] sm:text-4xl lg:text-5xl xl:text-[58px] leading-[1.08] text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+              Prayagraj&rsquo;s most loved <em className="text-[var(--color-gold-soft)] italic">wedding</em> &amp; banquet resort.
+            </h1>
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/85 leading-relaxed max-w-xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+              A peaceful, air-conditioned resort in Soraon with a 500-guest banquet hall, decorated mandap, in-house catering, deluxe AC rooms, and an open lawn — all on one campus from <span className="text-white font-medium">₹2.5 lakh</span>.
+            </p>
+            <div className="mt-7 sm:mt-9 flex flex-wrap gap-3">
+              <Button href="/contact" variant="gold" size="lg">
+                Check Availability
+              </Button>
+              <Button
+                href={`tel:${CONTACT.phonePrimary}`}
+                variant="outline-light"
+                size="lg"
+              >
+                Call {CONTACT.phonePrimaryDisplay}
+              </Button>
+            </div>
+            <div className="mt-7 sm:mt-9 flex items-center gap-3 text-sm text-white/75">
+              <StarRating className="text-[var(--color-gold-soft)]" size={16} />
+              <span className="font-medium">
+                {RATING.value} · {RATING.count}+ happy families
+              </span>
             </div>
           </div>
         </Container>
