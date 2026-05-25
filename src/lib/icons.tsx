@@ -1,0 +1,133 @@
+import {
+  AirVent,
+  Award,
+  BedDouble,
+  BellRing,
+  Briefcase,
+  Brush,
+  ConciergeBell,
+  Cake,
+  Calendar,
+  Camera,
+  CheckCircle2,
+  ChefHat,
+  ClipboardList,
+  Clock,
+  Coffee,
+  CookingPot,
+  Cross,
+  Crown,
+  Diamond,
+  Droplets,
+  Flame,
+  Flower2,
+  GraduationCap,
+  Hand,
+  HandPlatter,
+  Heart,
+  Home,
+  Image as ImageIcon,
+  Lamp,
+  Lightbulb,
+  type LucideIcon,
+  Mail,
+  MapPin,
+  Menu,
+  Music,
+  ParkingCircle,
+  PartyPopper,
+  Phone,
+  PlugZap,
+  Ribbon,
+  Shirt,
+  ShowerHead,
+  Sparkles,
+  Square,
+  Star,
+  Tv,
+  User,
+  Users,
+  Utensils,
+  Wifi,
+  Wine,
+  X,
+  Zap,
+} from "lucide-react";
+
+export {
+  AirVent,
+  Award,
+  BedDouble,
+  BellRing,
+  Briefcase,
+  Brush,
+  ConciergeBell,
+  Cake,
+  Calendar,
+  Camera,
+  CheckCircle2,
+  ChefHat,
+  ClipboardList,
+  Clock,
+  Coffee,
+  CookingPot,
+  Cross,
+  Crown,
+  Diamond,
+  Droplets,
+  Flame,
+  Flower2,
+  GraduationCap,
+  Hand,
+  HandPlatter,
+  Heart,
+  Home,
+  ImageIcon,
+  Lamp,
+  Lightbulb,
+  Mail,
+  MapPin,
+  Menu,
+  Music,
+  ParkingCircle,
+  PartyPopper,
+  Phone,
+  PlugZap,
+  Ribbon,
+  Shirt,
+  ShowerHead,
+  Sparkles,
+  Square,
+  Star,
+  Tv,
+  User,
+  Users,
+  Utensils,
+  Wifi,
+  Wine,
+  X,
+  Zap,
+};
+export type { LucideIcon };
+
+export function StarRating({
+  count = 5,
+  className = "text-[var(--color-gold)]",
+  size = 18,
+}: {
+  count?: number;
+  className?: string;
+  size?: number;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center gap-0.5 ${className}`}
+      aria-label={`${count} out of 5 stars`}
+      role="img"
+    >
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} size={size} fill="currentColor" strokeWidth={0} />
+      ))}
+    </span>
+  );
+}
