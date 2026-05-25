@@ -7,9 +7,9 @@ export type HeroSlide = { src: string; alt: string };
 
 /**
  * Full-bleed image carousel for the homepage hero.
- * - Crossfades between slides every `interval` ms
- * - Pauses on hover, respects prefers-reduced-motion
- * - Manual nav via the dot indicators at the bottom
+ * - Crossfades between slides every `interval` ms (never pauses, even on hover)
+ * - Respects prefers-reduced-motion
+ * - Manual nav via the prev/next arrows and dot indicators
  * - Dark gradient overlays keep text readable on any photo
  */
 export function HeroCarousel({
@@ -20,7 +20,6 @@ export function HeroCarousel({
   interval?: number;
 }) {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const total = slides.length;
 
   const advance = useCallback(() => {
@@ -36,20 +35,15 @@ export function HeroCarousel({
   }, [total]);
 
   useEffect(() => {
-    if (total <= 1 || paused) return;
+    if (total <= 1) return;
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(advance, interval);
     return () => window.clearInterval(id);
-  }, [paused, advance, interval, total]);
+  }, [advance, interval, total]);
 
   return (
-    <div
-      className="absolute inset-0"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      aria-roledescription="carousel"
-    >
+    <div className="absolute inset-0" aria-roledescription="carousel">
       {slides.map((slide, i) => (
         <div
           key={slide.src}
