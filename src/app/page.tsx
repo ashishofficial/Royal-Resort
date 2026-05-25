@@ -167,33 +167,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <PhotoGallery className="order-1 lg:order-none relative lg:pl-8">
-              {/* Mobile-first photo: shows above text on small screens, becomes
-                  the lead photo in a collage on lg+ */}
+            <div className="order-1 lg:order-none relative lg:pl-8">
               <PhotoFrame
-                label="Royal Banquet Hall — Decorated for Reception"
+                label="Royal Resort — Mini Hall at Dusk"
                 aspect="3/4"
-                imageKey="banquet"
+                imageKey="miniHall"
                 priority
                 className="!aspect-[4/3] sm:!aspect-[3/4] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
               />
-              <div className="hidden sm:block absolute -bottom-8 -left-8 w-44">
-                <PhotoFrame
-                  label="Decorated Mandap"
-                  aspect="1/1"
-                  imageKey="mandap"
-                  className="shadow-2xl ring-1 ring-white/15"
-                />
-              </div>
-              <div className="hidden sm:block absolute -top-6 -right-6 w-36">
-                <PhotoFrame
-                  label="Lawn at Dusk"
-                  aspect="1/1"
-                  imageKey="lawn"
-                  className="shadow-2xl ring-1 ring-white/15"
-                />
-              </div>
-            </PhotoGallery>
+            </div>
           </div>
         </Container>
       </section>
