@@ -8,7 +8,7 @@ export const SITE = {
   description:
     "Royal Resort is Prayagraj's premier wedding & banquet resort in Soraon offering an AC banquet hall for 500 guests at ₹2.5L, decorated mandap, catering, AC rooms, and a peaceful outdoor lawn.",
   locale: "en-IN",
-  themeColor: "#8B0000",
+  themeColor: "#1F4A3A",
 } as const;
 
 export const CONTACT = {

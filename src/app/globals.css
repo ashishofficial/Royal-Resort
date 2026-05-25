@@ -1,21 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #fdfbf7;
-  --color-surface: #ffffff;
-  --color-ink: #1a120b;
-  --color-ink-soft: #4a3b30;
-  --color-muted: #7a6a5e;
-  --color-line: #ece3d5;
-  --color-brand: #8b0000;
-  --color-brand-dark: #6d0000;
-  --color-brand-light: #b8334e;
-  --color-gold: #b08a3c;
-  --color-gold-soft: #d4b46a;
-  --color-cream: #f6efe3;
+  /* Modern luxe palette — ivory + emerald + soft gold */
+  --color-bg: #fbf8f2;            /* ivory page background */
+  --color-surface: #ffffff;        /* card surface */
+  --color-surface-2: #f1ead9;     /* warm muted band — sits between ivory and cream */
+
+  --color-ink: #0f1f1a;            /* near-black green for primary text */
+  --color-ink-soft: #2c4138;       /* secondary text */
+  --color-muted: #6e7670;          /* tertiary/captions */
+  --color-line: #e6dfd0;           /* hairline borders */
+  --color-line-strong: #c8bda6;
+
+  --color-brand: #1f4a3a;          /* deep emerald — primary */
+  --color-brand-dark: #143329;     /* hover/press */
+  --color-brand-deep: #0a1d17;     /* gradient bottom */
+  --color-brand-light: #2f6a55;    /* lighter accent */
+
+  --color-gold: #c29a4b;           /* soft brushed gold accent */
+  --color-gold-soft: #d8b675;
+  --color-gold-deep: #936f2c;
+
+  --color-cream: #ede2cd;          /* warm soft band — stronger than v1 for clearer separation */
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-playfair), Georgia, serif;
+  --font-display: var(--font-instrument-serif), "Cormorant Garamond", Georgia, serif;
 }
 
 :root {
@@ -30,18 +39,72 @@ body {
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01", "ss03";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 ::selection {
   background: var(--color-brand);
-  color: white;
+  color: var(--color-bg);
+}
+
+/* Subtle scrollbar that matches the warm bg */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* Reusable utility for fine hairline divider */
+.hairline {
+  height: 1px;
+  background: var(--color-line);
+}
+
+/* Magazine-style small caps eyebrow */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Refined link underline */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover {
+  background-size: 0 1px;
 }
 
 @media (max-width: 768px) {
