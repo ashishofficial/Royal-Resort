@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bride entry aisle placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a0808"/>
+      <stop offset="0.55" stop-color="#a02020"/>
+      <stop offset="1" stop-color="#1c0303"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="0.5" cy="0.3" r="0.55">
+      <stop offset="0" stop-color="#ffd99a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dia" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M30 0 L30 60 M0 30 L60 30" stroke="#ffd99a" stroke-width="0.5" stroke-opacity="0.16"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#dia)"/>
+  <rect width="1600" height="1200" fill="url(#spot)"/>
+  <g stroke="#ffd99a" stroke-width="1.5" fill="none" opacity="0.55">
+    <rect x="80" y="80" width="1440" height="1040" rx="6"/>
+    <rect x="110" y="110" width="1380" height="980" rx="4" stroke-width="0.6" opacity="0.6"/>
+  </g>
+  <g transform="translate(800 600)" fill="none" stroke="#ffd99a" stroke-width="2.2" stroke-linecap="round">
+    <path d="M-300 250 L-90 -200 M300 250 L90 -200" stroke-width="3"/>
+    <path d="M-200 50 L200 50 M-160 -40 L160 -40 M-130 -120 L130 -120"/>
+    <g fill="#ffd99a" stroke="none">
+      <circle cx="-200" cy="50" r="6"/>
+      <circle cx="200" cy="50" r="6"/>
+      <circle cx="-160" cy="-40" r="6"/>
+      <circle cx="160" cy="-40" r="6"/>
+      <circle cx="-130" cy="-120" r="6"/>
+      <circle cx="130" cy="-120" r="6"/>
+      <circle cx="-90" cy="-200" r="6"/>
+      <circle cx="90" cy="-200" r="6"/>
+    </g>
+    <path d="M-90 -200 Q0 -240 90 -200"/>
+    <g stroke-width="1.6" opacity="0.7">
+      <path d="M-280 220 L-300 250 M280 220 L300 250"/>
+    </g>
+  </g>
+  <text x="800" y="900" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#fff" font-style="italic">Bride Entry Aisle</text>
+  <text x="800" y="965" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#ffd99a" letter-spacing="6">ROYAL RESORT · PRAYAGRAJ</text>
+  <text x="800" y="1080" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" opacity="0.55" letter-spacing="4">PHOTO PLACEHOLDER</text>
+</svg>

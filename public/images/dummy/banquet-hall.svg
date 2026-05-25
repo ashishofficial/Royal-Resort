@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Banquet hall placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a0606"/>
+      <stop offset="0.55" stop-color="#8b0000"/>
+      <stop offset="1" stop-color="#1a0303"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#d4b46a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dia" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="60" height="60" fill="transparent"/>
+      <path d="M30 0 L30 60 M0 30 L60 30" stroke="#d4b46a" stroke-width="0.6" stroke-opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#dia)"/>
+  <rect width="1600" height="1200" fill="url(#glow)"/>
+  <g stroke="#d4b46a" stroke-width="1.5" fill="none" opacity="0.55">
+    <rect x="80" y="80" width="1440" height="1040" rx="6"/>
+    <rect x="110" y="110" width="1380" height="980" rx="4" stroke-width="0.6" opacity="0.6"/>
+  </g>
+  <g transform="translate(800 470)" fill="none" stroke="#d4b46a" stroke-width="2.4" stroke-linecap="round">
+    <path d="M-110 60 L110 60"/>
+    <path d="M-95 60 L-95 -40 Q-95 -75 -60 -75 L60 -75 Q95 -75 95 -40 L95 60"/>
+    <path d="M-95 -20 L95 -20"/>
+    <circle cx="0" cy="-110" r="14" fill="#d4b46a"/>
+    <path d="M-40 -95 L-22 -75 M40 -95 L22 -75"/>
+    <path d="M-70 -60 L-70 -20 M-40 -60 L-40 -20 M-10 -60 L-10 -20 M20 -60 L20 -20 M50 -60 L50 -20"/>
+    <path d="M-80 60 L-80 100 M80 60 L80 100"/>
+  </g>
+  <text x="800" y="720" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="68" fill="#fff" font-style="italic">Banquet Hall</text>
+  <text x="800" y="790" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#d4b46a" letter-spacing="6">ROYAL RESORT · PRAYAGRAJ</text>
+  <text x="800" y="1080" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" opacity="0.55" letter-spacing="4">PHOTO PLACEHOLDER</text>
+</svg>
