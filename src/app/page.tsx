@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
+import { StickyAvailability } from "@/components/sections/StickyAvailability";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   AirVent,
@@ -128,22 +129,22 @@ export default function HomePage() {
             backgroundSize: "30px 30px",
           }}
         />
-        <Container className="relative pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-14 lg:gap-20 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-7">
+        <Container className="relative pt-14 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-32">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 sm:gap-14 lg:gap-20 items-center">
+            <div className="order-2 lg:order-none">
+              <div className="flex items-center gap-3 mb-6 sm:mb-7">
                 <span className="h-px w-10 bg-[var(--color-gold)]" aria-hidden="true" />
                 <p className="text-[var(--color-gold-soft)] text-[11px] font-semibold uppercase tracking-[0.24em]">
                   Soraon · Prayagraj
                 </p>
               </div>
-              <h1 className="font-display text-[44px] sm:text-6xl lg:text-7xl xl:text-[88px] leading-[0.98] text-white">
+              <h1 className="font-display text-[40px] sm:text-6xl lg:text-7xl xl:text-[88px] leading-[0.98] text-white">
                 Prayagraj&rsquo;s most loved <em className="text-[var(--color-gold-soft)] italic">wedding</em> &amp; banquet resort.
               </h1>
-              <p className="mt-8 text-lg sm:text-xl text-white/75 leading-relaxed max-w-xl">
+              <p className="mt-7 text-base sm:text-xl text-white/75 leading-relaxed max-w-xl">
                 A peaceful, air-conditioned resort in Soraon with a 500-guest banquet hall, decorated mandap, in-house catering, deluxe AC rooms, and an open lawn — all on one campus from <span className="text-white font-medium">₹2.5 lakh</span>.
               </p>
-              <div className="mt-10 flex flex-wrap gap-3">
+              <div className="mt-8 sm:mt-10 flex flex-wrap gap-3">
                 <Button href="/contact" variant="gold" size="lg">
                   Check Availability
                 </Button>
@@ -155,7 +156,7 @@ export default function HomePage() {
                   Call {CONTACT.phonePrimaryDisplay}
                 </Button>
               </div>
-              <div className="mt-10 flex items-center gap-3 text-sm text-white/60">
+              <div className="mt-8 sm:mt-10 flex items-center gap-3 text-sm text-white/60">
                 <StarRating className="text-[var(--color-gold-soft)]" size={16} />
                 <span className="font-medium">
                   {RATING.value} · {RATING.count}+ happy families
@@ -163,13 +164,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative lg:pl-8">
+            <div className="order-1 lg:order-none relative lg:pl-8">
+              {/* Mobile-first photo: shows above text on small screens, becomes
+                  the lead photo in a collage on lg+ */}
               <PhotoFrame
                 label="Royal Banquet Hall — Decorated for Reception"
                 aspect="3/4"
                 imageKey="banquet"
                 priority
-                className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
+                className="!aspect-[4/3] sm:!aspect-[3/4] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
               />
               <div className="hidden sm:block absolute -bottom-8 -left-8 w-44">
                 <PhotoFrame
@@ -387,12 +390,78 @@ export default function HomePage() {
         </p>
       </Section>
 
+      {/* COMPARE-US */}
+      <Section
+        eyebrow="Why Royal Resort"
+        title="The same wedding. ₹3–5 lakh cheaper."
+        intro="Compared head-to-head with a typical city banquet hall in Prayagraj. Here is the math, line by line."
+        index="IV — Comparison"
+      >
+        <div className="overflow-x-auto rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_10px_30px_-18px_rgba(15,31,26,0.18)]">
+          <table className="w-full text-left text-[15px]">
+            <thead className="bg-[var(--color-brand)] text-white">
+              <tr>
+                <th className="px-5 sm:px-6 py-4 font-semibold text-[11px] sm:text-xs uppercase tracking-[0.18em]">
+                  What you compare
+                </th>
+                <th className="px-5 sm:px-6 py-4 font-semibold text-[11px] sm:text-xs uppercase tracking-[0.18em] text-center">
+                  Royal Resort
+                </th>
+                <th className="px-5 sm:px-6 py-4 font-semibold text-[11px] sm:text-xs uppercase tracking-[0.18em] text-center text-white/60">
+                  Typical city banquet
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[var(--color-line)]">
+              {[
+                { feature: "Per-plate effective cost", ours: "≈ ₹500", theirs: "₹999 – ₹1,500" },
+                { feature: "Package for 500 guests", ours: "₹2.5 lakh", theirs: "₹5 – ₹7.5 lakh" },
+                { feature: "Decorated mandap", ours: "Included", theirs: "₹50K – ₹1L extra" },
+                { feature: "Designer stage with backdrop", ours: "Included", theirs: "₹30K – ₹50K extra" },
+                { feature: "Jaimala & milni mala arrangement", ours: "Included", theirs: "₹10K – ₹25K extra" },
+                { feature: "2 AC rooms for the couple", ours: "Included", theirs: "₹15K – ₹25K extra" },
+                { feature: "20 trained waiters", ours: "Included", theirs: "Hourly extra" },
+                { feature: "Free on-site parking", ours: "Yes, ample", theirs: "Limited or paid" },
+                { feature: "Outdoor lawn for photography", ours: "Yes", theirs: "Usually indoor only" },
+                { feature: "Multi-day functions on one campus", ours: "Mini hall + lawn + banquet", theirs: "Coordinate separate venues" },
+              ].map((row, i) => (
+                <tr
+                  key={row.feature}
+                  className={`hover:bg-[var(--color-cream)]/40 transition-colors ${i % 2 === 1 ? "bg-[var(--color-bg)]/40" : ""}`}
+                >
+                  <td className="px-5 sm:px-6 py-4 font-medium text-[var(--color-ink)]">
+                    {row.feature}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 text-center text-[var(--color-brand)] font-semibold">
+                    {row.ours}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 text-center text-[var(--color-muted)]">
+                    {row.theirs}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-[var(--color-muted)] mt-6 text-center max-w-2xl mx-auto">
+          Comparison based on quoted pricing from comparable Prayagraj wedding venues in 2025. City-banquet figures exclude GST and assume standard 500-guest decoration packages.
+        </p>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <Button href="/contact" variant="primary" size="md">
+            Hold Your Date
+          </Button>
+          <Button href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%20want%20to%20compare%20Royal%20Resort%20with%20a%20city%20banquet%20—%20can%20you%20share%20a%20detailed%20quote%3F`} variant="secondary" size="md">
+            Ask for a Detailed Quote
+          </Button>
+        </div>
+      </Section>
+
       {/* GALLERY PREVIEW */}
       <Section
         eyebrow="Gallery"
         title="A look around Royal Resort"
         intro="Real photos from real weddings — full gallery available on request."
-        index="IV — In Pictures"
+        index="V — In Pictures"
       >
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <PhotoFrame label="Decorated Banquet Hall" aspect="4/3" imageKey="banquet" />
@@ -616,6 +685,8 @@ export default function HomePage() {
         title="Let's plan the wedding you actually want."
         subtitle="One call. Honest pricing. Walk-through of the venue on a date that suits you."
       />
+
+      <StickyAvailability />
     </>
   );
 }

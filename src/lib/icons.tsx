@@ -1,5 +1,6 @@
 import {
   AirVent,
+  ArrowRight,
   Award,
   BedDouble,
   BellRing,
@@ -56,6 +57,7 @@ import {
 
 export {
   AirVent,
+  ArrowRight,
   Award,
   BedDouble,
   BellRing,
