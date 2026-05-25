@@ -478,6 +478,66 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* FEATURED WEDDING */}
+      {/* TODO: Swap couple name, date, quote, and photos for a real wedding the family agrees to feature. */}
+      <Section
+        tone="cream"
+        eyebrow="From the Album"
+        title="Ananya & Rohan — December 2025"
+        intro="A 3-day weekend for 480 guests. Haldi in the Mini Hall on Saturday morning, mehndi and sangeet that evening, and the main wedding under a fully-decorated mandap on Sunday."
+        index="VI — A Real Wedding"
+      >
+        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-start">
+          <div className="space-y-4">
+            <PhotoFrame
+              label="Ananya & Rohan at the mandap"
+              aspect="4/3"
+              imageKey="mandap"
+              className="shadow-[0_30px_60px_-30px_rgba(15,31,26,0.3)]"
+            />
+            <div className="grid grid-cols-3 gap-4">
+              <PhotoFrame label="Haldi morning" aspect="1/1" imageKey="mehndi" />
+              <PhotoFrame label="Bride entry" aspect="1/1" imageKey="aisle" />
+              <PhotoFrame label="Reception stage" aspect="1/1" imageKey="stage" />
+            </div>
+          </div>
+
+          <figure className="lg:sticky lg:top-28 space-y-6">
+            <span className="block font-display text-5xl text-[var(--color-gold-deep)] leading-none" aria-hidden="true">&ldquo;</span>
+            <blockquote className="font-display italic text-2xl sm:text-3xl leading-[1.25] text-[var(--color-ink)]">
+              We compared seven venues in Prayagraj. Royal Resort handled every detail — mandap, food, rooms — and we paid less than half what city banquets quoted. Three days, zero stress.
+            </blockquote>
+            <figcaption className="pt-4 border-t border-[var(--color-line-strong)]/60">
+              <div className="font-display text-xl text-[var(--color-ink)]">Ananya &amp; Rohan Mishra</div>
+              <div className="text-sm text-[var(--color-muted)] mt-1">
+                Wedding · 480 guests · Banquet Hall + Mini Hall + 12 rooms
+              </div>
+              <div className="mt-5 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.18em] text-[var(--color-muted)]">
+                <span className="flex items-center gap-2">
+                  <span className="font-display text-2xl text-[var(--color-brand)] normal-case tracking-normal">3</span>
+                  days
+                </span>
+                <span className="h-4 w-px bg-[var(--color-line-strong)]" aria-hidden="true" />
+                <span className="flex items-center gap-2">
+                  <span className="font-display text-2xl text-[var(--color-brand)] normal-case tracking-normal">480</span>
+                  guests
+                </span>
+                <span className="h-4 w-px bg-[var(--color-line-strong)]" aria-hidden="true" />
+                <span className="flex items-center gap-2">
+                  <span className="font-display text-2xl text-[var(--color-brand)] normal-case tracking-normal">12</span>
+                  rooms
+                </span>
+              </div>
+            </figcaption>
+            <div className="pt-2">
+              <Button href="/contact" variant="primary" size="md">
+                Plan a Wedding Like This
+              </Button>
+            </div>
+          </figure>
+        </div>
+      </Section>
+
       {/* TESTIMONIALS */}
       <section className="relative overflow-hidden bg-[var(--color-brand-deep)] text-white py-20 sm:py-24 lg:py-32">
         <div
@@ -506,32 +566,57 @@ export default function HomePage() {
                 quote:
                   "We compared every banquet hall in Prayagraj for our daughter's wedding. Nobody came close to Royal Resort on price, and the food and decoration were better than venues charging double. 500 guests, zero complaints.",
                 name: "Ravi & Sunita Mishra",
-                role: "Wedding of Ananya · Dec 2025",
+                event: "Wedding · 500 guests",
+                date: "December 2025",
+                initials: "RS",
+                venue: "Banquet Hall",
               },
               {
                 quote:
                   "Booked the mini hall for my mother's 70th birthday. Decoration was beautiful, the AC was perfect, and the team handled everything. We just had to bring the cake.",
                 name: "Vikrant Pandey",
-                role: "Birthday · Oct 2025",
+                event: "Birthday · 150 guests",
+                date: "October 2025",
+                initials: "VP",
+                venue: "Mini Hall",
               },
               {
                 quote:
                   "Outstation baraat of 80 people. Two AC rooms came with the package, more rooms at fair rates. Best part — no traffic, no honking, mandap photos turned out incredible.",
                 name: "Aakash & Priya Tiwari",
-                role: "Wedding · Feb 2026",
+                event: "Wedding · 320 guests",
+                date: "February 2026",
+                initials: "AT",
+                venue: "Banquet + 8 rooms",
               },
             ].map((t) => (
               <figure
                 key={t.name}
-                className="rounded-2xl bg-white/[0.04] border border-white/10 p-7 backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300"
+                className="group flex flex-col rounded-2xl bg-white/[0.04] border border-white/10 p-7 backdrop-blur-sm hover:bg-white/[0.07] hover:border-white/25 transition-all duration-300"
               >
-                <StarRating className="text-[var(--color-gold-soft)] mb-4" size={16} />
-                <blockquote className="text-white/90 leading-relaxed text-[15px]">
-                  &ldquo;{t.quote}&rdquo;
+                <StarRating className="text-[var(--color-gold-soft)] mb-5" size={16} />
+                <blockquote className="flex-1 text-white/90 leading-relaxed text-[15px]">
+                  <span className="font-display italic text-[var(--color-gold-soft)] text-xl leading-none mr-0.5">
+                    &ldquo;
+                  </span>
+                  {t.quote}
                 </blockquote>
-                <figcaption className="mt-5 pt-5 border-t border-white/10">
-                  <div className="font-semibold text-white">{t.name}</div>
-                  <div className="text-xs text-white/60 mt-0.5">{t.role}</div>
+                <figcaption className="mt-6 pt-5 border-t border-white/10 flex items-start gap-4">
+                  <div
+                    aria-hidden="true"
+                    className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-brand-deep)] font-display text-lg font-medium"
+                  >
+                    {t.initials}
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-white text-[15px]">{t.name}</div>
+                    <div className="text-xs text-white/65 mt-0.5">
+                      {t.event} · {t.date}
+                    </div>
+                    <div className="text-[11px] text-[var(--color-gold-soft)] uppercase tracking-[0.18em] mt-1.5">
+                      {t.venue}
+                    </div>
+                  </div>
                 </figcaption>
               </figure>
             ))}
@@ -551,7 +636,7 @@ export default function HomePage() {
         eyebrow="Transparent Pricing"
         title="No hidden costs. No per-plate surprises."
         intro="Compared to city banquet halls in Prayagraj at ₹999–₹1500 per plate, our wedding package works out to roughly ₹500 per plate — with the venue, decoration, mandap, stage, rooms, and waiters all included."
-        index="VI — Pricing"
+        index="VII — Pricing"
       >
         <div className="overflow-x-auto rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_10px_30px_-18px_rgba(15,31,26,0.18)]">
           <table className="w-full text-left">
@@ -625,7 +710,7 @@ export default function HomePage() {
         eyebrow="Find Us"
         title="A peaceful drive from the heart of Prayagraj"
         intro="Far enough from city traffic for calm pheras and clean photography — close enough that no guest is inconvenienced."
-        index="VII — Visit"
+        index="VIII — Visit"
       >
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-10 items-start">
           <div className="space-y-6">
@@ -676,7 +761,7 @@ export default function HomePage() {
         eyebrow="Common Questions"
         title="Everything you wanted to ask"
         intro="If you have a question that is not answered here, WhatsApp us — we usually reply within an hour."
-        index="VIII — Questions"
+        index="IX — Questions"
       >
         <FAQ items={homeFaqs} />
       </Section>
