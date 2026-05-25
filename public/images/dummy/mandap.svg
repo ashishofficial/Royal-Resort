@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Decorated mandap placeholder">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5a3a06"/>
-      <stop offset="0.55" stop-color="#b08a3c"/>
-      <stop offset="1" stop-color="#3a2604"/>
+      <stop offset="0" stop-color="#143329"/>
+      <stop offset="0.55" stop-color="#2f6a55"/>
+      <stop offset="1" stop-color="#0a1d17"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
-      <stop offset="0" stop-color="#fff3d6" stop-opacity="0.5"/>
+      <stop offset="0" stop-color="#fff3d6" stop-opacity="0.4"/>
       <stop offset="1" stop-color="#000" stop-opacity="0"/>
     </radialGradient>
     <pattern id="dia" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <path d="M30 0 L30 60 M0 30 L60 30" stroke="#fff3d6" stroke-width="0.6" stroke-opacity="0.18"/>
+      <path d="M30 0 L30 60 M0 30 L60 30" stroke="#d8b675" stroke-width="0.5" stroke-opacity="0.18"/>
     </pattern>
   </defs>
   <rect width="1600" height="1200" fill="url(#bg)"/>
   <rect width="1600" height="1200" fill="url(#dia)"/>
   <rect width="1600" height="1200" fill="url(#glow)"/>
-  <g stroke="#fff3d6" stroke-width="1.5" fill="none" opacity="0.55">
+  <g stroke="#d8b675" stroke-width="1.4" fill="none" opacity="0.5">
     <rect x="80" y="80" width="1440" height="1040" rx="6"/>
-    <rect x="110" y="110" width="1380" height="980" rx="4" stroke-width="0.6" opacity="0.6"/>
+    <rect x="110" y="110" width="1380" height="980" rx="4" stroke-width="0.5" opacity="0.55"/>
   </g>
-  <g transform="translate(800 470)" fill="none" stroke="#fff3d6" stroke-width="2.6" stroke-linecap="round">
+  <g transform="translate(800 470)" fill="none" stroke="#d8b675" stroke-width="2.6" stroke-linecap="round">
     <path d="M-150 100 L-150 -40 Q-150 -130 -75 -130 L75 -130 Q150 -130 150 -40 L150 100"/>
     <path d="M-130 -85 Q0 -160 130 -85"/>
-    <circle cx="0" cy="-140" r="10" fill="#fff3d6"/>
-    <g fill="#fff3d6">
+    <circle cx="0" cy="-140" r="10" fill="#d8b675"/>
+    <g fill="#d8b675">
       <circle cx="-140" cy="-30" r="8"/>
       <circle cx="-140" cy="20" r="6"/>
       <circle cx="-140" cy="70" r="7"/>
@@ -35,7 +35,7 @@
     <path d="M-100 100 L100 100"/>
     <path d="M-70 100 L-70 130 M-30 100 L-30 130 M10 100 L10 130 M50 100 L50 130"/>
   </g>
-  <text x="800" y="730" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="68" fill="#fff" font-style="italic">Decorated Mandap</text>
-  <text x="800" y="800" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#fff3d6" letter-spacing="6">ROYAL RESORT · PRAYAGRAJ</text>
-  <text x="800" y="1080" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" opacity="0.55" letter-spacing="4">PHOTO PLACEHOLDER</text>
+  <text x="800" y="730" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="78" fill="#fff" font-style="italic">Decorated Mandap</text>
+  <text x="800" y="800" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#d8b675" letter-spacing="6">ROYAL RESORT · PRAYAGRAJ</text>
+  <text x="800" y="1080" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#fff" opacity="0.5" letter-spacing="4">PHOTO PLACEHOLDER</text>
 </svg>
