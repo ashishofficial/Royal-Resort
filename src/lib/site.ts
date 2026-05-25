@@ -18,6 +18,9 @@ export const CONTACT = {
   phoneSecondaryDisplay: "+91 80814 66183",
   whatsapp: "919305110658",
   email: "royalresortprayagraj@gmail.com",
+  // TODO: Replace "Talk to Ashish" with the actual venue host/owner name once shared.
+  // Used in the site header as the clickable call CTA in place of the raw phone number.
+  contactName: "Talk to Ashish",
 } as const;
 
 // TODO: Verify exact GPS coordinates from Google Maps Plus Code JR27+649

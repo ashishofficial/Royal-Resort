@@ -1,28 +1,39 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { Lightbox } from "./Lightbox";
 
 // Curated stock photos from Unsplash — all free for commercial use.
-// Each subject points to a specific photo ID, verified to return real images.
 // To swap any of these for a real wedding photo: replace the URL with your
 // own (Unsplash, Pexels, or your own CDN — domain must be whitelisted in
 // next.config.ts -> images.remotePatterns).
 const unsplash = (id: string) =>
   `https://images.unsplash.com/${id}?w=1600&q=80&auto=format&fit=crop`;
 
-export const DUMMY_IMAGES = {
-  banquet: unsplash("photo-1542665952-14513db15293"),         // banquet hall
-  mandap: unsplash("photo-1587271636175-90d58cdad458"),       // Indian wedding mandap
-  lawn: unsplash("photo-1768777277892-a7853afe5bd7"),         // outdoor wedding lawn
-  miniHall: unsplash("photo-1770387688486-397ff1afdb2c"),     // intimate wedding hall
-  stage: unsplash("photo-1523438885200-e635ba2c371e"),        // decorated wedding stage
-  room: unsplash("photo-1611892440504-42a792e24d32"),         // luxury hotel room
-  bathroom: unsplash("photo-1664917555352-f3f66e57ccc2"),     // hotel bathroom
-  dressing: unsplash("photo-1643216583837-f6d664d48eac"),     // bride getting ready
-  mehndi: unsplash("photo-1670774837214-21b88943a6bb"),       // haldi / mehndi setup
-  aisle: unsplash("photo-1607861884586-c7cfaed16290"),        // wedding aisle
-  gallery: unsplash("photo-1587271407850-8d438ca9fdf2"),      // Indian wedding moment
+// Higher-resolution version for the lightbox (browser-rendered full size).
+const unsplashLarge = (id: string) =>
+  `https://images.unsplash.com/${id}?w=2400&q=85&auto=format&fit=max`;
+
+const IMAGE_IDS = {
+  banquet: "photo-1542665952-14513db15293",
+  mandap: "photo-1587271636175-90d58cdad458",
+  lawn: "photo-1768777277892-a7853afe5bd7",
+  miniHall: "photo-1770387688486-397ff1afdb2c",
+  stage: "photo-1523438885200-e635ba2c371e",
+  room: "photo-1611892440504-42a792e24d32",
+  bathroom: "photo-1664917555352-f3f66e57ccc2",
+  dressing: "photo-1643216583837-f6d664d48eac",
+  mehndi: "photo-1670774837214-21b88943a6bb",
+  aisle: "photo-1607861884586-c7cfaed16290",
+  gallery: "photo-1587271407850-8d438ca9fdf2",
 } as const;
 
-export type ImageKey = keyof typeof DUMMY_IMAGES;
+export const DUMMY_IMAGES = Object.fromEntries(
+  Object.entries(IMAGE_IDS).map(([k, id]) => [k, unsplash(id)]),
+) as Record<keyof typeof IMAGE_IDS, string>;
+
+export type ImageKey = keyof typeof IMAGE_IDS;
 
 const RATIOS: Record<string, string> = {
   "4/3": "aspect-[4/3]",
@@ -47,18 +58,51 @@ export function PhotoFrame({
   priority?: boolean;
   sizes?: string;
 }) {
+  const [open, setOpen] = useState(false);
+  const src = unsplash(IMAGE_IDS[imageKey]);
+  const srcLarge = unsplashLarge(IMAGE_IDS[imageKey]);
+
   return (
-    <div
-      className={`relative overflow-hidden rounded-2xl bg-[var(--color-brand-deep)] ${RATIOS[aspect]} ${className}`}
-    >
-      <Image
-        src={DUMMY_IMAGES[imageKey]}
-        alt={label}
-        fill
-        sizes={sizes}
-        priority={priority}
-        className="object-cover"
-      />
-    </div>
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label={`Open image: ${label}`}
+        className={`group relative overflow-hidden rounded-2xl bg-[var(--color-brand-deep)] ${RATIOS[aspect]} ${className} cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] w-full block`}
+      >
+        <Image
+          src={src}
+          alt={label}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 flex items-end justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+        >
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[var(--color-brand)] shadow-md">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <line x1="11" y1="8" x2="11" y2="14" />
+              <line x1="8" y1="11" x2="14" y2="11" />
+            </svg>
+          </span>
+        </span>
+      </button>
+
+      <Lightbox src={srcLarge} alt={label} open={open} onClose={() => setOpen(false)} />
+    </>
   );
 }
