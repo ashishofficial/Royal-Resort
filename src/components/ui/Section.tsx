@@ -45,18 +45,6 @@ export function Section({
       id={id}
       className={`relative py-20 sm:py-24 lg:py-32 ${toneStyles[tone]} ${className}`}
     >
-      {index && (
-        <div className="absolute top-6 left-0 right-0 pointer-events-none">
-          <Container>
-            <div
-              className={`font-display italic text-sm tracking-wide ${isDark ? "text-white/40" : "text-[var(--color-muted)]"}`}
-              aria-hidden="true"
-            >
-              {index}
-            </div>
-          </Container>
-        </div>
-      )}
       <Container className={containerClassName}>
         {(eyebrow || title || intro) && (
           <RevealOrFragment animate={animate}>

@@ -86,7 +86,7 @@ export function HeroCarousel({
             type="button"
             aria-label="Previous slide"
             onClick={goPrev}
-            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:-translate-x-0.5 transition-all duration-300 backdrop-blur-sm border border-white/15"
+            className="hidden sm:inline-flex absolute left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:-translate-x-0.5 transition-all duration-300 backdrop-blur-sm border border-white/15"
             style={{ transform: "translateY(-50%)" }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -98,7 +98,7 @@ export function HeroCarousel({
             type="button"
             aria-label="Next slide"
             onClick={goNext}
-            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:translate-x-0.5 transition-all duration-300 backdrop-blur-sm border border-white/15"
+            className="hidden sm:inline-flex absolute right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:translate-x-0.5 transition-all duration-300 backdrop-blur-sm border border-white/15"
             style={{ transform: "translateY(-50%)" }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
