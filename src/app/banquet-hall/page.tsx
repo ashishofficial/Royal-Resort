@@ -165,10 +165,13 @@ export default function BanquetHallPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <PhotoFrame label="Hall — Empty Layout" aspect="3/4" imageKey="banquet" />
-            <div className="grid gap-4">
-              <PhotoFrame label="Decorated Stage Close-up" aspect="1/1" imageKey="stage" />
+            <div className="space-y-4">
+              <PhotoFrame label="Hall — Empty Layout" aspect="3/4" imageKey="banquet" />
+              <PhotoFrame label="Adjacent Lawn" aspect="1/1" imageKey="lawn" />
+            </div>
+            <div className="space-y-4 lg:pt-12">
               <PhotoFrame label="Mandap with Flowers" aspect="1/1" imageKey="mandap" />
+              <PhotoFrame label="Decorated Stage Close-up" aspect="3/4" imageKey="stage" />
             </div>
           </div>
         </div>

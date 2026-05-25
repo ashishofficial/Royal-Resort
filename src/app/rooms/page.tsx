@@ -167,10 +167,13 @@ export default function RoomsPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <PhotoFrame label="Deluxe Room — Bedside" aspect="3/4" imageKey="room" />
-            <div className="grid gap-4">
+            <div className="space-y-4">
+              <PhotoFrame label="Deluxe Room — Bedside" aspect="3/4" imageKey="room" />
+              <PhotoFrame label="Bridal Dressing Area" aspect="1/1" imageKey="dressing" />
+            </div>
+            <div className="space-y-4 lg:pt-12">
               <PhotoFrame label="Attached Bathroom" aspect="1/1" imageKey="bathroom" />
-              <PhotoFrame label="Dressing Area" aspect="1/1" imageKey="dressing" />
+              <PhotoFrame label="On-campus View" aspect="3/4" imageKey="lawn" />
             </div>
           </div>
         </div>
