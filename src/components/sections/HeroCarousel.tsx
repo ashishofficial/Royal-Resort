@@ -27,6 +27,14 @@ export function HeroCarousel({
     setIndex((i) => (i + 1) % total);
   }, [total]);
 
+  const goPrev = useCallback(() => {
+    setIndex((i) => (i - 1 + total) % total);
+  }, [total]);
+
+  const goNext = useCallback(() => {
+    setIndex((i) => (i + 1) % total);
+  }, [total]);
+
   useEffect(() => {
     if (total <= 1 || paused) return;
     if (typeof window === "undefined") return;
@@ -70,6 +78,35 @@ export function HeroCarousel({
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
       />
+
+      {/* Prev / Next arrows */}
+      {total > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label="Previous slide"
+            onClick={goPrev}
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:-translate-x-0.5 transition-all duration-300 backdrop-blur-sm border border-white/15"
+            style={{ transform: "translateY(-50%)" }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            aria-label="Next slide"
+            onClick={goNext}
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 hover:translate-x-0.5 transition-all duration-300 backdrop-blur-sm border border-white/15"
+            style={{ transform: "translateY(-50%)" }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
 
       {/* Slide indicators */}
       {total > 1 && (
