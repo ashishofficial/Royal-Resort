@@ -1,24 +1,25 @@
 import Image from "next/image";
 
-// Stock photos served from picsum.photos.
-// Each key uses a stable seed so the same photo loads every time —
-// swap a seed (or replace with a specific Unsplash photo URL) when you have
-// the real image for that subject.
-const stock = (seed: string) =>
-  `https://picsum.photos/seed/${seed}/1600/1200`;
+// Curated stock photos from Unsplash — all free for commercial use.
+// Each subject points to a specific photo ID, verified to return real images.
+// To swap any of these for a real wedding photo: replace the URL with your
+// own (Unsplash, Pexels, or your own CDN — domain must be whitelisted in
+// next.config.ts -> images.remotePatterns).
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/${id}?w=1600&q=80&auto=format&fit=crop`;
 
 export const DUMMY_IMAGES = {
-  banquet: stock("royal-resort-banquet-hall-1"),
-  mandap: stock("royal-resort-mandap-decor-2"),
-  lawn: stock("royal-resort-lawn-evening-3"),
-  miniHall: stock("royal-resort-mini-hall-4"),
-  stage: stock("royal-resort-designer-stage-5"),
-  room: stock("royal-resort-deluxe-room-6"),
-  bathroom: stock("royal-resort-bathroom-7"),
-  dressing: stock("royal-resort-dressing-area-8"),
-  mehndi: stock("royal-resort-mehndi-haldi-9"),
-  aisle: stock("royal-resort-bride-aisle-10"),
-  gallery: stock("royal-resort-gallery-11"),
+  banquet: unsplash("photo-1542665952-14513db15293"),         // banquet hall
+  mandap: unsplash("photo-1587271636175-90d58cdad458"),       // Indian wedding mandap
+  lawn: unsplash("photo-1768777277892-a7853afe5bd7"),         // outdoor wedding lawn
+  miniHall: unsplash("photo-1770387688486-397ff1afdb2c"),     // intimate wedding hall
+  stage: unsplash("photo-1523438885200-e635ba2c371e"),        // decorated wedding stage
+  room: unsplash("photo-1611892440504-42a792e24d32"),         // luxury hotel room
+  bathroom: unsplash("photo-1664917555352-f3f66e57ccc2"),     // hotel bathroom
+  dressing: unsplash("photo-1643216583837-f6d664d48eac"),     // bride getting ready
+  mehndi: unsplash("photo-1670774837214-21b88943a6bb"),       // haldi / mehndi setup
+  aisle: unsplash("photo-1607861884586-c7cfaed16290"),        // wedding aisle
+  gallery: unsplash("photo-1587271407850-8d438ca9fdf2"),      // Indian wedding moment
 } as const;
 
 export type ImageKey = keyof typeof DUMMY_IMAGES;
@@ -57,7 +58,6 @@ export function PhotoFrame({
         sizes={sizes}
         priority={priority}
         className="object-cover"
-        unoptimized
       />
     </div>
   );
