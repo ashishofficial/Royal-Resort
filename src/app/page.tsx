@@ -141,7 +141,7 @@ export default function HomePage() {
                   Soraon · Prayagraj
                 </p>
               </div>
-              <h1 className="font-display text-[30px] sm:text-4xl lg:text-5xl xl:text-[56px] leading-[1.05] text-white">
+              <h1 className="font-display text-[28px] sm:text-4xl lg:text-5xl xl:text-[52px] leading-[1.08] text-white">
                 Prayagraj&rsquo;s most loved <em className="text-[var(--color-gold-soft)] italic">wedding</em> &amp; banquet resort.
               </h1>
               <p className="mt-7 text-base sm:text-xl text-white/75 leading-relaxed max-w-xl">
@@ -192,7 +192,7 @@ export default function HomePage() {
             ] as Array<{ to: number; suffix: string; prefix: string; isMoney: boolean; label: string }>).map((s, i) => (
               <Reveal key={s.label} delay={i * 90}>
                 <div className="px-4">
-                  <dt className="font-display text-4xl sm:text-5xl text-[var(--color-brand)] leading-none">
+                  <dt className="font-display text-3xl sm:text-4xl text-[var(--color-brand)] leading-none">
                     {s.isMoney ? (
                       <span>
                         {s.prefix}
@@ -310,11 +310,11 @@ export default function HomePage() {
                 <p className="text-xs uppercase tracking-[0.16em] text-[var(--color-brand)] font-semibold">
                   {card.eyebrow}
                 </p>
-                <h3 className="font-display text-2xl mt-2 text-[var(--color-ink)]">
+                <h3 className="font-display text-xl mt-2 text-[var(--color-ink)]">
                   {card.title}
                 </h3>
                 <div className="flex items-baseline gap-3 mt-3 mb-5">
-                  <span className="font-display text-2xl text-[var(--color-brand)]">
+                  <span className="font-display text-xl text-[var(--color-brand)]">
                     {card.price}
                   </span>
                   <span className="text-sm text-[var(--color-muted)]">{card.capacity}</span>
@@ -369,7 +369,7 @@ export default function HomePage() {
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] text-[var(--color-brand)] group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)] group-hover:border-[var(--color-brand)] transition-colors duration-300">
                   <item.Icon size={22} strokeWidth={1.6} aria-hidden="true" />
                 </div>
-                <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
+                <h3 className="font-display text-lg text-[var(--color-ink)] mb-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
@@ -498,11 +498,11 @@ export default function HomePage() {
 
           <figure className="lg:sticky lg:top-28 space-y-6">
             <span className="block font-display text-5xl text-[var(--color-gold-deep)] leading-none" aria-hidden="true">&ldquo;</span>
-            <blockquote className="font-display italic text-2xl sm:text-3xl leading-[1.25] text-[var(--color-ink)]">
+            <blockquote className="font-display italic text-xl sm:text-2xl leading-[1.3] text-[var(--color-ink)]">
               We compared seven venues in Prayagraj. Royal Resort handled every detail — mandap, food, rooms — and we paid less than half what city banquets quoted. Three days, zero stress.
             </blockquote>
             <figcaption className="pt-4 border-t border-[var(--color-line-strong)]/60">
-              <div className="font-display text-xl text-[var(--color-ink)]">Ananya &amp; Rohan Mishra</div>
+              <div className="font-display text-lg text-[var(--color-ink)]">Ananya &amp; Rohan Mishra</div>
               <div className="text-sm text-[var(--color-muted)] mt-1">
                 Wedding · 480 guests · Banquet Hall + Mini Hall + 12 rooms
               </div>
@@ -550,7 +550,7 @@ export default function HomePage() {
                 Why Families Choose Us
               </p>
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05]">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-[2.25rem] text-white leading-[1.15]">
               Real reviews from <em className="italic text-[var(--color-gold-soft)]">real</em> weddings
             </h2>
           </div>
@@ -709,7 +709,7 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-10 items-start">
           <div className="space-y-6">
             <div className="bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_8px_24px_-18px_rgba(15,31,26,0.16)]">
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Address</h3>
+              <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">Address</h3>
               <address className="not-italic text-[var(--color-ink-soft)] leading-relaxed">
                 {LOCATION.streetAddress}<br />
                 {LOCATION.locality}, {LOCATION.region} {LOCATION.postalCode}<br />
@@ -725,7 +725,7 @@ export default function HomePage() {
               </a>
             </div>
             <div className="bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_8px_24px_-18px_rgba(15,31,26,0.16)]">
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Driving Distance</h3>
+              <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">Driving Distance</h3>
               <ul className="space-y-2 text-sm text-[var(--color-ink-soft)]">
                 <li className="flex justify-between gap-4"><span>Prayagraj Junction</span> <span className="text-[var(--color-muted)]">~40 min</span></li>
                 <li className="flex justify-between gap-4"><span>Prayagraj Airport</span> <span className="text-[var(--color-muted)]">~55 min</span></li>

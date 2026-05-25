@@ -81,7 +81,7 @@ export default function ContactPage() {
                 We are here to help
               </p>
             </div>
-            <h1 className="font-display text-[40px] sm:text-5xl lg:text-[68px] leading-[1.02]">
+            <h1 className="font-display text-[28px] sm:text-4xl lg:text-[52px] leading-[1.08]">
               Talk to the <em className="italic text-[var(--color-gold-soft)]">Royal Resort</em> team
             </h1>
             <p className="mt-7 text-lg text-white/75 leading-relaxed">
@@ -171,7 +171,7 @@ export default function ContactPage() {
           </div>
           <div className="space-y-6">
             <div className="rounded-2xl border border-[var(--color-line-strong)]/40 bg-[var(--color-cream)] p-7">
-              <h3 className="font-display text-2xl text-[var(--color-ink)] mb-3">Visit Us</h3>
+              <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">Visit Us</h3>
               <address className="not-italic text-[var(--color-ink-soft)] leading-relaxed">
                 <strong className="text-[var(--color-ink)] block">Royal Resort</strong>
                 {LOCATION.streetAddress}<br />
@@ -191,7 +191,7 @@ export default function ContactPage() {
               </Button>
             </div>
             <div className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-bg)] p-7">
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">Hours</h3>
+              <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">Hours</h3>
               <p className="text-[var(--color-ink-soft)] text-sm leading-relaxed">
                 Open all 7 days for venue tours and event bookings.<br />
                 Best time to call: <strong className="text-[var(--color-ink)]">9 AM – 9 PM</strong>.<br />

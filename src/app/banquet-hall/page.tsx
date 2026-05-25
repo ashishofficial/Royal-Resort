@@ -109,14 +109,14 @@ export default function BanquetHallPage() {
                   Royal Banquet Hall
                 </p>
               </div>
-              <h1 className="font-display text-[40px] sm:text-5xl lg:text-[68px] leading-[1.02]">
+              <h1 className="font-display text-[28px] sm:text-4xl lg:text-[52px] leading-[1.08]">
                 AC Banquet Hall in Prayagraj <em className="italic text-[var(--color-gold-soft)]">for 500</em> guests
               </h1>
               <p className="mt-7 text-lg text-white/75 leading-relaxed max-w-xl">
                 Prayagraj&rsquo;s most complete wedding banquet hall — central air-conditioning, decorated mandap, designer stage, two AC rooms, full catering space, and 20 trained waiters. One package, one transparent price.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-6xl text-[var(--color-gold-soft)]">₹2.5L</span>
+                <span className="font-display text-4xl sm:text-5xl text-[var(--color-gold-soft)]">₹2.5L</span>
                 <span className="text-white/60 text-sm">
                   for 500 guests · all-inclusive
                 </span>
@@ -207,7 +207,7 @@ export default function BanquetHallPage() {
                 <Check size={18} strokeWidth={2.5} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-display text-xl text-[var(--color-ink)]">
+                <h3 className="font-display text-lg text-[var(--color-ink)]">
                   {title}
                 </h3>
                 <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed mt-1.5">
@@ -229,7 +229,7 @@ export default function BanquetHallPage() {
       >
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-[var(--color-bg)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
-            <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">
+            <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">
               Kitchen Provided
             </h3>
             <ul className="text-sm text-[var(--color-ink-soft)] space-y-1.5">
@@ -241,7 +241,7 @@ export default function BanquetHallPage() {
             </ul>
           </div>
           <div className="bg-[var(--color-bg)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
-            <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">
+            <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">
               Buffet & Live Counters
             </h3>
             <ul className="text-sm text-[var(--color-ink-soft)] space-y-1.5">
@@ -253,7 +253,7 @@ export default function BanquetHallPage() {
             </ul>
           </div>
           <div className="bg-[var(--color-bg)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)]">
-            <h3 className="font-display text-xl text-[var(--color-ink)] mb-3">
+            <h3 className="font-display text-lg text-[var(--color-ink)] mb-3">
               Cuisines Available
             </h3>
             <ul className="text-sm text-[var(--color-ink-soft)] space-y-1.5">
@@ -292,7 +292,7 @@ export default function BanquetHallPage() {
               <div className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-muted)] mb-2 font-medium">
                 {spec.label}
               </div>
-              <div className="font-display text-3xl text-[var(--color-ink)]">
+              <div className="font-display text-2xl text-[var(--color-ink)]">
                 {spec.value}
               </div>
             </div>
@@ -320,7 +320,7 @@ export default function BanquetHallPage() {
               key={title}
               className="rounded-2xl border border-[var(--color-line)] p-7 bg-[var(--color-bg)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.18)] hover:border-[var(--color-line-strong)] transition-all duration-300"
             >
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
+              <h3 className="font-display text-lg text-[var(--color-ink)] mb-2">
                 {title}
               </h3>
               <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">

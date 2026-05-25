@@ -120,14 +120,14 @@ export default function MiniHallPage() {
                   Royal Mini Hall
                 </p>
               </div>
-              <h1 className="font-display text-[40px] sm:text-5xl lg:text-[64px] leading-[1.02]">
+              <h1 className="font-display text-[28px] sm:text-4xl lg:text-[48px] leading-[1.08]">
                 Haldi, mehndi, birthday &amp; engagement <em className="italic text-[var(--color-gold-soft)]">venue</em>
               </h1>
               <p className="mt-7 text-lg text-white/75 leading-relaxed max-w-xl">
                 An air-conditioned mini hall built for intimate functions of around 200 guests. Decorated stage, 2 AC rooms, 8 waiters — all in one package, on the same campus as our main banquet hall.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-6xl text-[var(--color-gold-soft)]">₹1L</span>
+                <span className="font-display text-4xl sm:text-5xl text-[var(--color-gold-soft)]">₹1L</span>
                 <span className="text-white/60 text-sm">for 200 guests · all-inclusive</span>
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -220,7 +220,7 @@ export default function MiniHallPage() {
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] text-[var(--color-brand)] group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)] group-hover:border-[var(--color-brand)] transition-colors duration-300">
                 <item.Icon size={22} strokeWidth={1.6} aria-hidden="true" />
               </div>
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
+              <h3 className="font-display text-lg text-[var(--color-ink)] mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
@@ -247,7 +247,7 @@ export default function MiniHallPage() {
               <p className="text-[var(--color-gold-soft)] uppercase tracking-[0.18em] text-xs font-semibold mb-3">
                 Wedding Weekend Combo
               </p>
-              <h3 className="font-display text-3xl lg:text-4xl text-white mb-4">
+              <h3 className="font-display text-2xl lg:text-3xl text-white mb-4">
                 Mini Hall + Banquet Hall, same campus
               </h3>
               <p className="text-white/80 leading-relaxed">

@@ -34,7 +34,7 @@ export function CTABand({
         <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-end">
           <div>
             <h2
-              className={`font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] ${isBrand ? "text-white" : "text-[var(--color-ink)]"}`}
+              className={`font-display text-2xl sm:text-3xl lg:text-[2.5rem] leading-[1.15] ${isBrand ? "text-white" : "text-[var(--color-ink)]"}`}
             >
               {title}
             </h2>

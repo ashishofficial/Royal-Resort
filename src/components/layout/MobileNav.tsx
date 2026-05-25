@@ -42,7 +42,7 @@ export function MobileNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="px-1 py-5 font-display text-2xl border-b border-[var(--color-line)] text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
+                className="px-1 py-5 font-display text-xl border-b border-[var(--color-line)] text-[var(--color-ink)] hover:text-[var(--color-brand)] transition-colors"
               >
                 {link.label}
               </Link>

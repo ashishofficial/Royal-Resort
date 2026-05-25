@@ -112,14 +112,14 @@ export default function RoomsPage() {
                   Deluxe Rooms
                 </p>
               </div>
-              <h1 className="font-display text-[40px] sm:text-5xl lg:text-[64px] leading-[1.02]">
+              <h1 className="font-display text-[28px] sm:text-4xl lg:text-[48px] leading-[1.08]">
                 On-campus AC rooms for <em className="italic text-[var(--color-gold-soft)]">wedding guests</em> &amp; families
               </h1>
               <p className="mt-7 text-lg text-white/75 leading-relaxed max-w-xl">
                 Comfortable air-conditioned deluxe rooms with attached bathrooms on the Royal Resort campus — ideal for baraat parties, outstation family, and couples who would rather stay over than drive back to the city after a function.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-6xl text-[var(--color-gold-soft)]">
+                <span className="font-display text-4xl sm:text-5xl text-[var(--color-gold-soft)]">
                   ₹{PRICING.deluxeRoomNight.toLocaleString("en-IN")}
                 </span>
                 <span className="text-white/60 text-sm">per night · double occupancy</span>

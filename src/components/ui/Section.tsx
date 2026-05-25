@@ -80,7 +80,7 @@ export function Section({
               )}
               {title && (
                 <h2
-                  className={`font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.05] mb-5 ${isDark ? "text-white" : "text-[var(--color-ink)]"}`}
+                  className={`font-display text-2xl sm:text-3xl lg:text-[2.25rem] leading-[1.15] mb-5 ${isDark ? "text-white" : "text-[var(--color-ink)]"}`}
                 >
                   {title}
                 </h2>

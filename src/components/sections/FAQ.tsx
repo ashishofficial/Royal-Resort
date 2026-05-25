@@ -20,7 +20,7 @@ export function FAQ({ items }: { items: FAQItem[] }) {
               onClick={() => setOpenIdx(isOpen ? null : idx)}
               className="w-full flex items-start justify-between gap-6 py-6 text-left group transition-colors px-1"
             >
-              <span className="font-display text-lg sm:text-xl text-[var(--color-ink)] pr-4 leading-snug">
+              <span className="font-display text-base sm:text-lg text-[var(--color-ink)] pr-4 leading-snug">
                 {item.question}
               </span>
               <span
