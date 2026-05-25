@@ -11,7 +11,7 @@ type Variant =
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "group inline-flex items-center justify-center gap-2 font-medium tracking-wide transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-[var(--color-bg)] disabled:opacity-50 disabled:pointer-events-none rounded-full";
+  "btn-shine group relative overflow-hidden inline-flex items-center justify-center gap-2 font-medium tracking-wide transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-[var(--color-bg)] disabled:opacity-50 disabled:pointer-events-none rounded-full";
 
 const variants: Record<Variant, string> = {
   primary:

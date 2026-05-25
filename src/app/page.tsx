@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { CountUp } from "@/components/ui/CountUp";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
 import { PhotoGallery } from "@/components/ui/PhotoGallery";
+import { Reveal } from "@/components/ui/Reveal";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
 import { StickyAvailability } from "@/components/sections/StickyAvailability";
@@ -200,20 +202,30 @@ export default function HomePage() {
       <section className="bg-[var(--color-surface)] border-b border-[var(--color-line)]">
         <Container className="py-10 lg:py-12">
           <dl className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 divide-x divide-[var(--color-line)] text-center">
-            {[
-              { value: "500+", label: "Guest capacity" },
-              { value: "200+", label: "Weddings hosted" },
-              { value: "2", label: "AC halls + lawn" },
-              { value: "₹2.5L", label: "All-in package" },
-            ].map((s) => (
-              <div key={s.label} className="px-4">
-                <dt className="font-display text-4xl sm:text-5xl text-[var(--color-brand)] leading-none">
-                  {s.value}
-                </dt>
-                <dd className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-muted)] mt-3 font-medium">
-                  {s.label}
-                </dd>
-              </div>
+            {([
+              { to: 500, suffix: "+", prefix: "", isMoney: false, label: "Guest capacity" },
+              { to: 200, suffix: "+", prefix: "", isMoney: false, label: "Weddings hosted" },
+              { to: 2, suffix: "", prefix: "", isMoney: false, label: "AC halls + lawn" },
+              { to: 2.5, suffix: "L", prefix: "₹", isMoney: true, label: "All-in package" },
+            ] as Array<{ to: number; suffix: string; prefix: string; isMoney: boolean; label: string }>).map((s, i) => (
+              <Reveal key={s.label} delay={i * 90}>
+                <div className="px-4">
+                  <dt className="font-display text-4xl sm:text-5xl text-[var(--color-brand)] leading-none">
+                    {s.isMoney ? (
+                      <span>
+                        {s.prefix}
+                        {s.to}
+                        {s.suffix}
+                      </span>
+                    ) : (
+                      <CountUp to={s.to} suffix={s.suffix} prefix={s.prefix} />
+                    )}
+                  </dt>
+                  <dd className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-muted)] mt-3 font-medium">
+                    {s.label}
+                  </dd>
+                </div>
+              </Reveal>
             ))}
           </dl>
         </Container>
@@ -369,21 +381,20 @@ export default function HomePage() {
             { Icon: Users, title: "20 trained waiters", body: "20-person uniformed service team for the duration of the event. Coordinated by our floor manager." },
             { Icon: Lightbulb, title: "Flower & light decoration", body: "Hall ambient lighting, entrance decoration, and themed floral arrangements included." },
             { Icon: ParkingCircle, title: "Free on-site parking", body: "Ample car and two-wheeler parking with a dedicated attendant and security for the night." },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="group bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] text-[var(--color-brand)] group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)] group-hover:border-[var(--color-brand)] transition-colors duration-300">
-                <item.Icon size={22} strokeWidth={1.6} aria-hidden="true" />
+          ].map((item, i) => (
+            <Reveal key={item.title} delay={i * 60}>
+              <div className="group bg-[var(--color-surface)] rounded-2xl p-7 border border-[var(--color-line)] shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_20px_40px_-22px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300 h-full">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] text-[var(--color-brand)] group-hover:bg-[var(--color-brand)] group-hover:text-[var(--color-bg)] group-hover:border-[var(--color-brand)] transition-colors duration-300">
+                  <item.Icon size={22} strokeWidth={1.6} aria-hidden="true" />
+                </div>
+                <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
+                  {item.body}
+                </p>
               </div>
-              <h3 className="font-display text-xl text-[var(--color-ink)] mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
-                {item.body}
-              </p>
-            </div>
+            </Reveal>
           ))}
         </div>
         <p className="text-sm text-[var(--color-muted)] mt-8 text-center max-w-2xl mx-auto">

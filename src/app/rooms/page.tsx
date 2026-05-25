@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
 import { PhotoGallery } from "@/components/ui/PhotoGallery";
+import { Reveal } from "@/components/ui/Reveal";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
@@ -203,19 +204,18 @@ export default function RoomsPage() {
               { Icon: ConciergeBell, label: "On-call service" },
               { Icon: Brush, label: "Daily housekeeping" },
             ] satisfies Array<{ Icon: LucideIcon; label: string }>
-          ).map((a) => (
-            <div
-              key={a.label}
-              className="group bg-[var(--color-surface)] rounded-2xl p-5 border border-[var(--color-line)] text-center shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_16px_30px_-18px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <a.Icon
-                size={24}
-                strokeWidth={1.6}
-                className="mx-auto mb-3 text-[var(--color-brand)] group-hover:scale-110 transition-transform duration-300"
-                aria-hidden="true"
-              />
-              <div className="text-sm font-medium text-[var(--color-ink)]">{a.label}</div>
-            </div>
+          ).map((a, i) => (
+            <Reveal key={a.label} delay={i * 50}>
+              <div className="group bg-[var(--color-surface)] rounded-2xl p-5 border border-[var(--color-line)] text-center shadow-[0_1px_0_rgba(15,31,26,0.03)] hover:shadow-[0_16px_30px_-18px_rgba(31,74,58,0.22)] hover:border-[var(--color-line-strong)] hover:-translate-y-0.5 transition-all duration-300 h-full">
+                <a.Icon
+                  size={24}
+                  strokeWidth={1.6}
+                  className="mx-auto mb-3 text-[var(--color-brand)] group-hover:scale-110 transition-transform duration-300"
+                  aria-hidden="true"
+                />
+                <div className="text-sm font-medium text-[var(--color-ink)]">{a.label}</div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Section>

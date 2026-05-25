@@ -113,6 +113,34 @@ p {
   }
 }
 
+/* Button shimmer — a soft diagonal light sweeps across the button on hover.
+   Applied to all variants via the .btn-shine class on the base button. */
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+.btn-shine:hover::before {
+  left: 125%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine::before {
+    display: none;
+  }
+}
+
 @keyframes lb-fade-in {
   from { opacity: 0; }
   to { opacity: 1; }

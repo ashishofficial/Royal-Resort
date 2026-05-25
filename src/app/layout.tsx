@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTAs } from "@/components/layout/MobileCTAs";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
@@ -118,6 +119,7 @@ export default function RootLayout({
         <JsonLd data={organizationSchema()} />
       </head>
       <body className="min-h-full flex flex-col">
+        <ScrollProgress />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
