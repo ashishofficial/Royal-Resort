@@ -104,6 +104,17 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[12px] opacity-60">
           <p>© {year} {SITE.legalName}. All rights reserved.</p>
           <p className="font-display italic text-[14px]">{SITE.tagline}</p>
+          <p className="text-[13px]">
+            Designed And Developed by{' '}
+            <a
+              href="https://codingclave.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-gold-soft)] hover:text-[var(--color-gold)] transition-colors"
+            >
+              CodingClave Development LLP
+            </a>
+          </p>
         </div>
       </Container>
     </footer>
