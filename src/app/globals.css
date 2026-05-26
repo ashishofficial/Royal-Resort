@@ -107,9 +107,12 @@ p {
   background-size: 0 1px;
 }
 
-@media (max-width: 768px) {
+/* Mobile only — leave just enough room for the fixed Call/WhatsApp bar
+   so the footer's last line sits flush against it (no ivory gap). Match
+   this height exactly with the MobileCTAs container (h-14 = 56px). */
+@media (max-width: 1023.98px) {
   body {
-    padding-bottom: 4rem;
+    padding-bottom: 3.5rem;
   }
 }
 
