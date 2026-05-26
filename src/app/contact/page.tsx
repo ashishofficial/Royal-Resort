@@ -142,11 +142,14 @@ export default function ContactPage() {
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--color-ink)] text-white">
                 <Mail size={20} strokeWidth={2} aria-hidden="true" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <div className="text-xs uppercase tracking-[0.14em] text-[var(--color-muted)]">
                   Email
                 </div>
-                <div className="font-display text-lg text-[var(--color-ink)] break-all">
+                <div
+                  className="font-sans text-[15px] font-medium text-[var(--color-ink)] truncate"
+                  title={CONTACT.email}
+                >
                   {CONTACT.email}
                 </div>
                 <div className="text-sm text-[var(--color-ink-soft)]">
