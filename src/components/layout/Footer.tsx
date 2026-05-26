@@ -14,7 +14,7 @@ export function Footer() {
             "radial-gradient(circle at 20% 20%, var(--color-gold) 0, transparent 35%), radial-gradient(circle at 80% 80%, var(--color-brand-light) 0, transparent 40%)",
         }}
       />
-      <Container className="relative py-16 lg:py-24">
+      <Container className="relative py-8 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
